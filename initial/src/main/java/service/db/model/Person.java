@@ -1,14 +1,10 @@
 package service.db.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 /**
  * Created by sridharyadav on 9/23/16.
  */
-
-
-import javax.persistence.Entity;
-import javax.persistence.Table;
-@Entity
-@Table(name = "person")
 public class Person {
     private int id;
     private String name;

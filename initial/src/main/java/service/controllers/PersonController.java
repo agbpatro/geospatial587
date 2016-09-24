@@ -1,7 +1,6 @@
 package service.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import service.db.PersonService;
 import service.db.model.Person;
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +13,6 @@ public class PersonController {
 
 
 
-    @Autowired
-    PersonService personService;
-
     final static Logger LOG = Logger.getLogger(PersonController.class);
 
     @RequestMapping(value = "/addPerson",
@@ -25,7 +21,6 @@ public class PersonController {
     @ResponseBody
     public String addPerson(@RequestBody Person person) {
         LOG.info("Person added");
-        personService.addPerson(person);
         return JSONPerson(person);
     }
 

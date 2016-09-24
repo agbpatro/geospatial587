@@ -10,31 +10,30 @@ import javax.persistence.*;
 /**
  * Created by patro on 9/24/16.
  */
-@Entity
+//@Entity
 public class Ad implements Serializable {
 
 
-    @Column(name = "id", nullable = false)
+    //@Column(name = "id", nullable = false)
     int id;
 
-    @Column(name = "impressions", nullable = false)
+    //@Column(name = "impressions", nullable = false)
     int impressions;
 
 
-    @Column(name = "boundaryId", nullable = true)
+    //@Column(name = "boundaryId", nullable = true)
     int boundaryId;
 
-
-    @Column(name = "budget", nullable = true)
+    //@Column(name = "budget", nullable = true)
     float budget;
 
-    @Column(name = "amountLeft", nullable = true)
+    //@Column(name = "amountLeft", nullable = true)
     float amountLeft;
 
-    @Column(name = "name", nullable = false)
+    //@Column(name = "name", nullable = false)
     String name;
 
-    @Column(name = "country", nullable = false)
+    //@Column(name = "country", nullable = false)
     String country;
 
     public int getId() {
