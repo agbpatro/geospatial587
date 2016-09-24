@@ -2,7 +2,7 @@ FROM java:8
 
 VOLUME /tmp
 
-ADD target/gs-spring-boot-0.1.0-SNAPSHOT.jar app.jar
+ADD target/gs-spring-boot-0.1.0.jar app.jar
 
 RUN bash -c 'touch /app.jar'
 
