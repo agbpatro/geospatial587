@@ -1,19 +1,25 @@
-package hello;
+package controllers;
 
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
+import static response.JsonResponse.jsonOutput;
+
+/**
+ * Created by patro on 9/23/16.
+ */
+
 @RestController
-@RequestMapping("/v1")
-public class HelloController {
-    final static Logger LOG = Logger.getLogger(HelloController.class);
+@RequestMapping("/v1/dummy")
+public class DummyController {
+    final static Logger LOG = Logger.getLogger(DummyController.class);
 
     @RequestMapping("/")
     public String index() {
         LOG.info("simple / call");
-        return "Greetings from Spring Boot!";
+        return jsonOutput("Greetings from Spring Boot!");
     }
 
 
@@ -21,14 +27,14 @@ public class HelloController {
     public String getCall(@PathVariable String ip) {
 
         LOG.info("get call with : " + ip);
-        return ip;
+        return jsonOutput(ip+ip);
     }
 
     @RequestMapping(value = "/postSupplier", method = RequestMethod.POST, headers = "Accept=application/json")
     @ResponseBody
     public String redire(@RequestBody JSONObject obj) {
         System.out.println(obj.toString());
-        return "success1";
+        return jsonOutput("success1");
     }
 
     @RequestMapping("/hello")
@@ -36,13 +42,6 @@ public class HelloController {
         return "Patro";
     }
 
-    @RequestMapping(value = "/addPerson",
-            method = RequestMethod.POST,
-            headers = {"Content-type=application/json"})
-    @ResponseBody
-    public String addPerson(@RequestBody Person person) {
-        return person.getCity();
-    }
 
     @RequestMapping(method = RequestMethod.POST, value = "/post/{id}")
     public String postCall(@PathVariable String id, @RequestBody String contact) {
@@ -57,6 +56,4 @@ public class HelloController {
             return id;
         }
     }
-
-
 }
