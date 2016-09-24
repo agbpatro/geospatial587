@@ -1,0 +1,3 @@
+docker login --username=geoproj587 --email=apatro@usc.edu  --password=geospatialadvertisement
+docker tag 31c02c0b5559 geoproj587/geospatialproject:latest
+docker push geoproj587/geospatialproject
