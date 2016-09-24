@@ -1,9 +1,15 @@
 package hello;
 
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
+@RequestMapping("/v1")
 public class HelloController {
 
     @RequestMapping("/")
@@ -12,9 +18,22 @@ public class HelloController {
     }
 
 
-    @RequestMapping("/hello")
-    public String index1() {
-        return "Patro";
+    @RequestMapping(method = RequestMethod.GET, value = "/{ip}")
+    public String getCall(@PathVariable String ip) {
+        return ip;
     }
-    
+
+    @RequestMapping(method = RequestMethod.POST, value = "/post/{id}")
+    public String postCall(@PathVariable String id, @RequestBody String contact) {
+
+        JSONObject json = new JSONObject(contact);
+
+        try {
+            return id + json.getString(id);
+        } catch (JSONException e) {
+            return id;
+        }
+    }
+
+
 }
