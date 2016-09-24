@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd /home/ec2-user
+
+yum install docker -y
+
+service docker start
+
+docker login --username=geoproj587 --email=apatro@usc.edu  --password=geospatialadvertisement
+
+docker pull geoproj587/geospatialproject
+
+docker run -p 80:8080 -P geoproj587/geospatialproject
