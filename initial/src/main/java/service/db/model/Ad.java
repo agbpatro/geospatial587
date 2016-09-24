@@ -12,6 +12,9 @@ public class Ad implements Serializable {
     //@Column(name = "id", nullable = false)
     int id;
 
+    //@Column(name = "imageId", nullable = false)
+    int imageId;
+
     //@Column(name = "impressions", nullable = false)
     int impressions;
 
@@ -30,6 +33,10 @@ public class Ad implements Serializable {
 
     //@Column(name = "country", nullable = false)
     String country;
+
+
+    //@Column(name = "clickCount", nullable = false)
+    int clickCount;
 
     public int getId() {
         return id;
@@ -87,5 +94,19 @@ public class Ad implements Serializable {
         this.boundaryId = boundaryId;
     }
 
+    public int getClickCount() {
+        return clickCount;
+    }
 
+    public void setClickCount(int clickCount) {
+        this.clickCount = clickCount;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
+    }
 }
