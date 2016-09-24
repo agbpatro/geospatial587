@@ -1,8 +1,8 @@
 package service.response;
 
-import service.model.Ad;
-import service.model.Boundary;
-import service.model.Person;
+import service.db.model.Ad;
+import service.db.model.Boundary;
+import service.db.model.Person;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;

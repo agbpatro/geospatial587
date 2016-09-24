@@ -1,14 +1,25 @@
-package service.model;
+package service.db.model;
 
 /**
  * Created by sridharyadav on 9/23/16.
  */
 
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+@Entity
+@Table(name = "person")
 public class Person {
+    private int id;
     private String name;
     private int age;
     private String city;
     // getters & setters ...
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setAge(int age) {
         this.age = age;
@@ -26,8 +37,12 @@ public class Person {
         return name;
     }
 
-    public int getAge(){
+    public int getAge() {
         return age;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getCity() {

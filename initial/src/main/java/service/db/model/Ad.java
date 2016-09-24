@@ -1,7 +1,6 @@
-package service.model;
+package service.db.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.norberg.automatter.AutoMatter;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -15,12 +14,28 @@ import javax.persistence.*;
 public class Ad implements Serializable {
 
 
+    @Column(name = "id", nullable = false)
     int id;
+
+    @Column(name = "impressions", nullable = false)
     int impressions;
 
+
+    @Column(name = "boundaryId", nullable = true)
     int boundaryId;
-    float budget, amountLeft;
-    String name, country;
+
+
+    @Column(name = "budget", nullable = true)
+    float budget;
+
+    @Column(name = "amountLeft", nullable = true)
+    float amountLeft;
+
+    @Column(name = "name", nullable = false)
+    String name;
+
+    @Column(name = "country", nullable = false)
+    String country;
 
     public int getId() {
         return id;

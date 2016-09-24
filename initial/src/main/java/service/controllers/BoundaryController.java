@@ -2,10 +2,8 @@ package service.controllers;
 
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.*;
-import service.model.Ad;
-import service.model.Boundary;
+import service.db.model.Boundary;
 
-import static service.response.JsonResponse.JSONAd;
 import static service.response.JsonResponse.JSONBoundary;
 
 /**

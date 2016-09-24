@@ -1,4 +1,4 @@
-package service.model;
+package service.db.model;
 
 /**
  * Created by patro on 9/24/16.

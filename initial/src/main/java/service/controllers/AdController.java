@@ -2,11 +2,9 @@ package service.controllers;
 
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.*;
-import service.model.Ad;
-import service.model.Person;
+import service.db.model.Ad;
 
 import static service.response.JsonResponse.JSONAd;
-import static service.response.JsonResponse.JSONPerson;
 
 /**
  * Created by patro on 9/24/16.
