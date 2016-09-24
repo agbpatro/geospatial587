@@ -1,7 +1,6 @@
-package response;
+package service.response;
 
-import controllers.PersonController;
-import model.Person;
+import service.model.Person;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;

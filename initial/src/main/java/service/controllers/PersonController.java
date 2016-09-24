@@ -1,12 +1,10 @@
-package controllers;
+package service.controllers;
 
-import model.Person;
+import service.model.Person;
 import org.apache.log4j.Logger;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
-import static response.JsonResponse.JSONPerson;
+import static service.response.JsonResponse.JSONPerson;
 
 @RestController
 @RequestMapping("/v1/person")

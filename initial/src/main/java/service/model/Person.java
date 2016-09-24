@@ -1,4 +1,4 @@
-package model;
+package service.model;
 
 /**
  * Created by sridharyadav on 9/23/16.

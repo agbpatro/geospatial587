@@ -1,11 +1,11 @@
-package controllers;
+package service.controllers;
 
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
-import static response.JsonResponse.jsonOutput;
+import static service.response.JsonResponse.jsonOutput;
 
 /**
  * Created by patro on 9/23/16.
@@ -27,7 +27,7 @@ public class DummyController {
     public String getCall(@PathVariable String ip) {
 
         LOG.info("get call with : " + ip);
-        return jsonOutput(ip+ip);
+        return jsonOutput(ip);
     }
 
     @RequestMapping(value = "/postSupplier", method = RequestMethod.POST, headers = "Accept=application/json")
@@ -37,9 +37,9 @@ public class DummyController {
         return jsonOutput("success1");
     }
 
-    @RequestMapping("/hello")
+    @RequestMapping("/service")
     public String index1() {
-        return "Patro";
+        return jsonOutput("Patro");
     }
 
 
@@ -50,10 +50,10 @@ public class DummyController {
 
         try {
             LOG.info("post call");
-            return id + json.getString("id");
+            return jsonOutput(id + json.getString("id"));
         } catch (JSONException e) {
             LOG.error("Error parsing json", e);
-            return id;
+            return jsonOutput(id);
         }
     }
 }
