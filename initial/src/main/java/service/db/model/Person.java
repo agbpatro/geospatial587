@@ -1,7 +1,5 @@
 package service.db.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 /**
  * Created by sridharyadav on 9/23/16.
  */

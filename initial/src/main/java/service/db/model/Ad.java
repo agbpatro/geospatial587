@@ -1,11 +1,6 @@
 package service.db.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.Serializable;
-import javax.persistence.*;
 
 /**
  * Created by patro on 9/24/16.
