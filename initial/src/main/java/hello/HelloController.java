@@ -3,11 +3,7 @@ package hello;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @RequestMapping("/v1")
@@ -26,6 +22,26 @@ public class HelloController {
 
         LOG.info("get call with : " + ip);
         return ip;
+    }
+
+    @RequestMapping(value = "/postSupplier", method = RequestMethod.POST, headers = "Accept=application/json")
+    @ResponseBody
+    public String redire(@RequestBody JSONObject obj) {
+        System.out.println(obj.toString());
+        return "success1";
+    }
+
+    @RequestMapping("/hello")
+    public String index1() {
+        return "Patro";
+    }
+
+    @RequestMapping(value = "/addPerson",
+            method = RequestMethod.POST,
+            headers = {"Content-type=application/json"})
+    @ResponseBody
+    public String addPerson(@RequestBody Person person) {
+        return person.getCity();
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/post/{id}")
