@@ -1,5 +1,7 @@
 package service.response;
 
+import service.model.Ad;
+import service.model.Boundary;
 import service.model.Person;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
@@ -50,6 +52,36 @@ public class JsonResponse {
 
         } catch (JSONException e) {
             LOG.error("Error parsing person object", e);
+            return "";
+        }
+    }
+
+
+    public static String JSONAd(Ad ad) {
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("id", ad.getId());
+            obj.put("name", ad.getName());
+            obj.put("budget", ad.getBudget());
+            obj.put("country", ad.getCountry());
+            obj.put("impressions", ad.getCountry());
+            obj.put("amountLeft", ad.getAmountLeft());
+            obj.put("boundaryId", ad.getBoundaryId());
+            return obj.toString();
+        } catch (JSONException e) {
+            LOG.error("Error parsing ad object", e);
+            return "";
+        }
+    }
+
+
+    public static String JSONBoundary(Boundary boundary) {
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("id", boundary.getId());
+            return obj.toString();
+        } catch (JSONException e) {
+            LOG.error("Error parsing boundary object", e);
             return "";
         }
     }
