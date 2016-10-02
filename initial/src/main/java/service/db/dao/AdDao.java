@@ -8,5 +8,5 @@ import service.db.model.Ad;
 public interface AdDao {
 
 
-  public boolean insertAd(Ad model);
+  public Ad insertAd(Ad model);
 }
