@@ -1,36 +1,45 @@
-CREATE TABLE AD(
-  id serial primary key,
-  imageId serial,
-  boundaryId INTEGER,
-  clickCount INTEGER,
+DROP TABLE IF EXISTS AD;
+DROP TABLE IF EXISTS PERSON;
+DROP TABLE IF EXISTS BOUNDARY;
+DROP TABLE IF EXISTS ADBOUNDARY;
+DROP TABLE IF EXISTS PERSONAD;
+
+
+
+CREATE TABLE AD (
+  id          SERIAL PRIMARY KEY,
+  name        VARCHAR(30),
+  imageId     SERIAL,
+  boundaryId  INTEGER,
+  clickCount  INTEGER,
   impressions INTEGER,
-  budget FLOAT,
-  amountLeft FLOAT,
-  country VARCHAR(10)
+  budget      FLOAT,
+  amountLeft  FLOAT,
+  country     VARCHAR(10)
 );
 
-CREATE TABLE PERSON(
-  id  serial primary key,
-  age INTEGER,
+CREATE TABLE PERSON (
+  id   SERIAL PRIMARY KEY,
+  age  INTEGER,
   name VARCHAR(10),
   city VARCHAR(20)
 );
 
 
-CREATE TABLE BOUNDARY(
-  id  serial primary key
+CREATE TABLE BOUNDARY (
+  id SERIAL PRIMARY KEY
 );
 
 
-CREATE TABLE ADBOUNDARY(
-  id  serial primary key,
-  adId  INTEGER,
-  boundaryId  INTEGER
+CREATE TABLE ADBOUNDARY (
+  id         SERIAL PRIMARY KEY,
+  adId       INTEGER,
+  boundaryId INTEGER
 );
 
 
-CREATE TABLE PERSONAD(
-  id  serial primary key,
-  adId  INTEGER,
-  personId  INTEGER
+CREATE TABLE PERSONAD (
+  id       SERIAL PRIMARY KEY,
+  adId     INTEGER,
+  personId INTEGER
 );
