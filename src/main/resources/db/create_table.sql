@@ -1,7 +1,5 @@
 DROP TABLE IF EXISTS AD;
 DROP TABLE IF EXISTS PERSON;
-DROP TABLE IF EXISTS BOUNDARY;
-DROP TABLE IF EXISTS ADBOUNDARY;
 DROP TABLE IF EXISTS PERSONAD;
 
 
@@ -11,11 +9,12 @@ CREATE TABLE AD (
   url         TEXT,
   type        VARCHAR(10),
   imageId     SERIAL,
-  clickCount  INTEGER,
-  impressions INTEGER,
+  clickCount  INTEGER DEFAULT 0,
+  impressions INTEGER DEFAULT 0,
   budget      FLOAT,
   amountLeft  FLOAT,
-  country     VARCHAR(10)
+  country     VARCHAR(10),
+  fence       POLYGON
 );
 
 CREATE TABLE PERSON (
@@ -23,19 +22,6 @@ CREATE TABLE PERSON (
   age  INTEGER,
   name VARCHAR(30),
   city VARCHAR(30)
-);
-
-
-CREATE TABLE BOUNDARY (
-  id   SERIAL PRIMARY KEY,
-  name VARCHAR(30)
-);
-
-
-CREATE TABLE ADBOUNDARY (
-  id         SERIAL PRIMARY KEY,
-  adId       INTEGER,
-  boundaryId INTEGER
 );
 
 

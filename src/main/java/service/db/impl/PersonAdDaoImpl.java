@@ -51,7 +51,7 @@ public class PersonAdDaoImpl implements PersonAdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing oxygen", e);
         }
       }
     }
@@ -80,7 +80,7 @@ public class PersonAdDaoImpl implements PersonAdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing oxygen", e);
         }
       }
     }
@@ -109,7 +109,7 @@ public class PersonAdDaoImpl implements PersonAdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing oxygen", e);
         }
       }
     }
@@ -138,7 +138,7 @@ public class PersonAdDaoImpl implements PersonAdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing oxygen", e);
         }
       }
     }

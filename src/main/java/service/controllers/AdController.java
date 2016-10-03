@@ -12,6 +12,7 @@ import java.util.List;
 import service.db.impl.AdDaoImpl;
 import service.db.impl.PersonAdDaoImpl;
 import service.db.model.Ad;
+import service.db.model.Location;
 import service.db.model.Person;
 
 import static service.db.impl.AdDaoImpl.CLICK;
@@ -77,5 +78,18 @@ public class AdController {
     LOG.info("Ad updated impression count");
     return JSONAd(op);
   }
+
+
+  @RequestMapping(value = "/getad",
+      method = RequestMethod.POST)
+  @ResponseBody
+  public String getAd(@RequestBody Location location) {
+    AdDaoImpl ob = new AdDaoImpl();
+    Ad op1 = ob.getAdByLocation(location);
+    LOG.info("Ad fetched by location");
+    Ad op2 = ob.clickAd(op1, IMPRESSION);
+    return JSONAd(op2);
+  }
+
 
 }

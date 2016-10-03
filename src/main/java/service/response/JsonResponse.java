@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import service.db.model.Ad;
-import service.db.model.AdBoundary;
-import service.db.model.Boundary;
 import service.db.model.Person;
 import service.db.model.PersonAd;
 
@@ -65,15 +63,16 @@ public class JsonResponse {
   }
 
   public static String JSONAd(List<Ad> ads) {
+
     JSONArray responseArray = new JSONArray();
     try {
       for (Ad ad : ads) {
         if (ad != null) {
           JSONObject obj = new JSONObject();
           obj.put("id", ad.getId());
+          obj.put("name", ad.getName());
           obj.put("type", ad.getType());
           obj.put("url", ad.getUrl());
-          obj.put("boundaryId", ad.getBoundaryId());
           obj.put("personId", ad.getPersonId());
           obj.put("imageId", ad.getImageId());
           obj.put("name", ad.getName());
@@ -82,8 +81,9 @@ public class JsonResponse {
           obj.put("impressions", ad.getImpressions());
           obj.put("amountLeft", ad.getAmountLeft());
           obj.put("clickCount", ad.getClickCount());
+          obj.put("fence", ad.getFence());
           if (ad.getImpressions() != 0) {
-            obj.put("ctr", (ad.getClickCount() * 100.0) / (1.0 * ad.getImpressions()));
+            obj.put("ctr", (ad.getClickCount() * 100.0) / (1.0 * (ad.getImpressions() + ad.getClickCount())));
           } else {
             obj.put("ctr", 0);
           }
@@ -121,19 +121,6 @@ public class JsonResponse {
   }
 
 
-  public static String JSONBoundary(Boundary boundary) {
-    JSONObject obj = new JSONObject();
-    try {
-      obj.put("id", boundary.getId());
-      obj.put("adId", boundary.getAdId());
-      return obj.toString();
-    } catch (JSONException e) {
-      LOG.error("Error parsing boundary object", e);
-      return "";
-    }
-  }
-
-
   public static String JSONPersonAd(PersonAd personAd) {
     JSONObject obj = new JSONObject();
 
@@ -149,19 +136,4 @@ public class JsonResponse {
     }
   }
 
-
-  public static String JSONAdBoundary(AdBoundary adBoundary) {
-    JSONObject obj = new JSONObject();
-
-    try {
-      obj.put("id", adBoundary.getId());
-      obj.put("boundaryId", adBoundary.getBoundaryId());
-      obj.put("adId", adBoundary.getAdId());
-      return obj.toString();
-
-    } catch (JSONException e) {
-      LOG.error("Error parsing ad boundary mapping object", e);
-      return "";
-    }
-  }
 }
