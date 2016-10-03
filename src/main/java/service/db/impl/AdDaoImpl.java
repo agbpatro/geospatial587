@@ -63,7 +63,7 @@ public class AdDaoImpl implements AdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          LOG.error("Error closing oxygen", e);
+          LOG.error("Error closing connection", e);
         }
       }
     }
@@ -100,7 +100,7 @@ public class AdDaoImpl implements AdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          LOG.error("Error closing oxygen", e);
+          LOG.error("Error closing connection", e);
         }
       }
     }
@@ -130,7 +130,7 @@ public class AdDaoImpl implements AdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          LOG.error("Error closing oxygen", e);
+          LOG.error("Error closing connection", e);
         }
       }
     }
@@ -159,7 +159,7 @@ public class AdDaoImpl implements AdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          LOG.error("Error closing oxygen", e);
+          LOG.error("Error closing connection", e);
         }
       }
     }
@@ -188,7 +188,7 @@ public class AdDaoImpl implements AdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          LOG.error("Error closing oxygen", e);
+          LOG.error("Error closing connection", e);
         }
       }
     }
@@ -217,7 +217,7 @@ public class AdDaoImpl implements AdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          LOG.error("Error closing oxygen", e);
+          LOG.error("Error closing connection", e);
         }
       }
     }
