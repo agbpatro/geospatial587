@@ -8,6 +8,8 @@ DROP TABLE IF EXISTS PERSONAD;
 CREATE TABLE AD (
   id          SERIAL PRIMARY KEY,
   name        VARCHAR(30),
+  url         TEXT,
+  type        VARCHAR(10),
   imageId     SERIAL,
   clickCount  INTEGER,
   impressions INTEGER,

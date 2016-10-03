@@ -27,6 +27,9 @@ public class ResultWrapper {
     ad.setImpressions(rs.getInt("impressions"));
     ad.setBudget(rs.getFloat("budget"));
     ad.setCountry(rs.getString("country"));
+    ad.setType(rs.getString("type"));
+    ad.setUrl(rs.getString("url"));
+    ad.setAmountLeft(rs.getFloat("amountLeft"));
     return ad;
   }
 

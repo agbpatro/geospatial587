@@ -20,16 +20,19 @@ import static service.response.ResultWrapper.getAd;
  */
 public class AdDaoImpl implements AdDao {
 
+  public final static String IMPRESSION = "impression";
+  public final static String CLICK = "click";
   final static Logger LOG = Logger.getLogger(AdDaoImpl.class);
 
   @Override
   public Ad insertAd(Ad model) {
+    model.setAmountLeft(model.getBudget());
     Ad a = getAdByName(model);
     if (a != null) {
       return a;
     }
     String sql =
-        "INSERT INTO AD (NAME, COUNTRY, CLICKCOUNT, IMPRESSIONS) VALUES (?,?,?,?) Returning *";
+        "INSERT INTO AD (NAME, COUNTRY, CLICKCOUNT, BUDGET, AMOUNTLEFT, TYPE, URL) VALUES (?,?,?,?,?,?,?) Returning *";
     Connection conn = getConnection();
 
     try {
@@ -39,7 +42,10 @@ public class AdDaoImpl implements AdDao {
       pstmt.setString(1, model.getName());
       pstmt.setString(2, model.getCountry());
       pstmt.setInt(3, model.getClickCount());
-      pstmt.setInt(4, model.getImpressions());
+      pstmt.setFloat(4, model.getBudget());
+      pstmt.setFloat(5, model.getAmountLeft());
+      pstmt.setString(6, model.getType());
+      pstmt.setString(7, model.getUrl());
       //int count = pstmt.executeUpdate();
       ResultSet rs = pstmt.executeQuery();
 
@@ -63,9 +69,14 @@ public class AdDaoImpl implements AdDao {
 
 
   @Override
-  public Ad clickAd(Ad model) {
-    String sql =
-        "UPDATE Ad SET clickCount = clickCount+1 WHERE id = ? Returning *";
+  public Ad clickAd(Ad model, String type) {
+    String sql;
+    if (type.equals(CLICK)) {
+      sql =
+          "UPDATE Ad SET clickCount = clickCount+1 , impressions = impressions+1 , amountLeft = amountLeft - 2 WHERE id = ? Returning *";
+    } else {
+      sql = "UPDATE Ad SET impressions = impressions+1 , amountLeft = amountLeft - 1 WHERE id = ? Returning *";
+    }
     Connection conn = getConnection();
 
     try {

@@ -20,6 +20,9 @@ import service.db.model.PersonAd;
 public class JsonResponse {
 
 
+  public final static String IMAGE = "image";
+  public final static String VIDEO = "video";
+
   final static Logger LOG = Logger.getLogger(JsonResponse.class);
 
   public static String jsonOutput(String ip) {
@@ -68,6 +71,8 @@ public class JsonResponse {
         if (ad != null) {
           JSONObject obj = new JSONObject();
           obj.put("id", ad.getId());
+          obj.put("type", ad.getType());
+          obj.put("url", ad.getUrl());
           obj.put("boundaryId", ad.getBoundaryId());
           obj.put("personId", ad.getPersonId());
           obj.put("imageId", ad.getImageId());
@@ -77,7 +82,11 @@ public class JsonResponse {
           obj.put("impressions", ad.getImpressions());
           obj.put("amountLeft", ad.getAmountLeft());
           obj.put("clickCount", ad.getClickCount());
-          obj.put("ctr", (ad.getClickCount() * 100.0) / (1.0 * ad.getImpressions()));
+          if (ad.getImpressions() != 0) {
+            obj.put("ctr", (ad.getClickCount() * 100.0) / (1.0 * ad.getImpressions()));
+          } else {
+            obj.put("ctr", 0);
+          }
           responseArray.put(obj);
         }
       }

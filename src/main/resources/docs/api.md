@@ -16,7 +16,7 @@
 
 
 #Build Ad
-`curl -X POST -d '{    "name" : "Harry Potter",    "country" : "USA",    "impressions" : 12343,    "personId" : 2}' "http://localhost:8080/v1/ad/buildad"`
+`curl -X POST -d '{    "name" : "Harry Potter",    "country" : "USA",    "budget" : 10000.0,    "personId" : 2}' "http://localhost:8080/v1/ad/buildad"`
 
 #Response
 ```json
@@ -31,8 +31,8 @@
     "name": "Harry Potter",
     "personId": 0,
     "id": 2,
-    "impressions": 12343,
-    "budget": 0
+    "impressions": 0,
+    "budget": 10000.0
   }
 ]
 ```
@@ -100,23 +100,50 @@
 
 
 #Increase Click Count
-`curl -X POST  -d '{    "id" : 1    }' "http://localhost:8080/v1/ad/clickad"`
+`curl -X POST  -d '{    "id" : 10    }' "http://localhost:8080/v1/ad/clickad"`
 
 #Response
 ```
 [
   {
-    "ctr": 0.00405074776803798,
+    "ctr": 0,
     "country": "USA",
-    "amountLeft": 0,
-    "imageId": 1,
-    "clickCount": 5,
+    "imageId": 10,
+    "clickCount": 1,
+    "impressions": 0,
+    "type": "video",
+    "url": "",
+    "amountLeft": 9998,
     "boundaryId": 0,
-    "name": "hello world",
+    "name": "Made in India",
     "personId": 0,
-    "id": 1,
-    "impressions": 123434,
-    "budget": 0
+    "id": 10,
+    "budget": 10000
   }
 ]
 ```
+
+
+
+#Increase Impression Count
+`curl -X POST  -d '{    "id" : 10    }' "http://localhost:8080/v1/ad/impressionad"`
+
+#Response
+```
+[
+  {
+    "ctr": 0,
+    "country": "USA",
+    "imageId": 10,
+    "clickCount": 1,
+    "impressions": 0,
+    "type": "video",
+    "url": "",
+    "amountLeft": 9997,
+    "boundaryId": 0,
+    "name": "Made in India",
+    "personId": 0,
+    "id": 10,
+    "budget": 10000
+  }
+]

@@ -14,6 +14,8 @@ import service.db.impl.PersonAdDaoImpl;
 import service.db.model.Ad;
 import service.db.model.Person;
 
+import static service.db.impl.AdDaoImpl.CLICK;
+import static service.db.impl.AdDaoImpl.IMPRESSION;
 import static service.response.JsonResponse.JSONAd;
 
 /**
@@ -60,8 +62,19 @@ public class AdController {
   @ResponseBody
   public String clickAd(@RequestBody Ad ad) {
     AdDaoImpl ob = new AdDaoImpl();
-    Ad op = ob.clickAd(ad);
+    Ad op = ob.clickAd(ad, CLICK);
     LOG.info("Ad updated click count");
+    return JSONAd(op);
+  }
+
+
+  @RequestMapping(value = "/impressionad",
+      method = RequestMethod.POST)
+  @ResponseBody
+  public String impressionAd(@RequestBody Ad ad) {
+    AdDaoImpl ob = new AdDaoImpl();
+    Ad op = ob.clickAd(ad, IMPRESSION);
+    LOG.info("Ad updated impression count");
     return JSONAd(op);
   }
 

@@ -12,7 +12,7 @@ public interface AdDao {
 
   public Ad insertAd(Ad model);
 
-  public Ad clickAd(Ad model);
+  public Ad clickAd(Ad model, String type);
 
   public Ad getAdById(Ad model);
 
