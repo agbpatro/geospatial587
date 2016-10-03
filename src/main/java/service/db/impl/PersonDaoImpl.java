@@ -52,7 +52,7 @@ public class PersonDaoImpl implements PersonDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing connection", e);
         }
       }
     }
@@ -81,7 +81,7 @@ public class PersonDaoImpl implements PersonDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing connection", e);
         }
       }
     }
@@ -109,7 +109,7 @@ public class PersonDaoImpl implements PersonDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing connection", e);
         }
       }
     }
@@ -138,7 +138,7 @@ public class PersonDaoImpl implements PersonDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing connection", e);
         }
       }
     }

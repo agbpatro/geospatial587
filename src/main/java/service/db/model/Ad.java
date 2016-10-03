@@ -1,12 +1,19 @@
 package service.db.model;
 
+import org.apache.log4j.Logger;
+import org.postgresql.geometric.PGpolygon;
+
 import java.io.Serializable;
+import java.sql.SQLException;
 
 /**
  * Created by patro on 9/24/16.
  */
 //@Entity
 public class Ad implements Serializable {
+
+
+  final static Logger LOG = Logger.getLogger(Ad.class);
 
   int id;
 
@@ -31,6 +38,8 @@ public class Ad implements Serializable {
   String url;
 
   String type;
+
+  PGpolygon fence;
 
   public int getId() {
     return id;
@@ -96,14 +105,6 @@ public class Ad implements Serializable {
     this.imageId = imageId;
   }
 
-  public int getBoundaryId() {
-    return boundaryId;
-  }
-
-  public void setBoundaryId(int boundaryId) {
-    this.boundaryId = boundaryId;
-  }
-
   public int getPersonId() {
     return personId;
   }
@@ -127,4 +128,18 @@ public class Ad implements Serializable {
   public void setType(String type) {
     this.type = type;
   }
+
+  public PGpolygon getFence() {
+    return fence;
+  }
+
+  public void setFence(String fence) {
+    try {
+      this.fence = new PGpolygon(fence);
+    } catch (SQLException e) {
+      LOG.error("Error building polygon", e);
+    }
+  }
+
+
 }

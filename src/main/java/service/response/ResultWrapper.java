@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import service.db.model.Ad;
-import service.db.model.AdBoundary;
-import service.db.model.Boundary;
 import service.db.model.Person;
 import service.db.model.PersonAd;
 
@@ -30,6 +28,7 @@ public class ResultWrapper {
     ad.setType(rs.getString("type"));
     ad.setUrl(rs.getString("url"));
     ad.setAmountLeft(rs.getFloat("amountLeft"));
+    ad.setFence(rs.getString("fence"));
     return ad;
   }
 
@@ -42,18 +41,6 @@ public class ResultWrapper {
     return person;
   }
 
-
-  public static Boundary getBoundary(ResultSet rs) throws SQLException {
-    Boundary boundary = new Boundary();
-    boundary.setId(rs.getInt("id"));
-    return boundary;
-  }
-
-  public static AdBoundary getAdBoundary(ResultSet rs) throws SQLException {
-    AdBoundary adBoundary = new AdBoundary();
-    adBoundary.setId(rs.getInt("id"));
-    return adBoundary;
-  }
 
   public static PersonAd getPersonAd(ResultSet rs) throws SQLException {
     PersonAd personAd = new PersonAd();

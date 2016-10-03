@@ -1,7 +1,6 @@
 package service.db.dao;
 
 import service.db.model.Ad;
-import service.db.model.Boundary;
 import service.db.model.Person;
 import service.db.model.PersonAd;
 

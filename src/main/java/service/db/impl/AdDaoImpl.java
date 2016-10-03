@@ -8,9 +8,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import service.db.dao.AdDao;
 import service.db.model.Ad;
+import service.db.model.Location;
 
 import static service.Application.getConnection;
 import static service.response.ResultWrapper.getAd;
@@ -31,8 +33,9 @@ public class AdDaoImpl implements AdDao {
     if (a != null) {
       return a;
     }
-    String sql =
-        "INSERT INTO AD (NAME, COUNTRY, CLICKCOUNT, BUDGET, AMOUNTLEFT, TYPE, URL) VALUES (?,?,?,?,?,?,?) Returning *";
+    String
+        sql =
+        "INSERT INTO AD (NAME, COUNTRY, CLICKCOUNT, BUDGET, AMOUNTLEFT, TYPE, URL, FENCE) VALUES (?,?,?,?,?,?,?,?) Returning *";
     Connection conn = getConnection();
 
     try {
@@ -46,6 +49,7 @@ public class AdDaoImpl implements AdDao {
       pstmt.setFloat(5, model.getAmountLeft());
       pstmt.setString(6, model.getType());
       pstmt.setString(7, model.getUrl());
+      pstmt.setObject(8, model.getFence());
       //int count = pstmt.executeUpdate();
       ResultSet rs = pstmt.executeQuery();
 
@@ -59,7 +63,7 @@ public class AdDaoImpl implements AdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing connection", e);
         }
       }
     }
@@ -73,7 +77,7 @@ public class AdDaoImpl implements AdDao {
     String sql;
     if (type.equals(CLICK)) {
       sql =
-          "UPDATE Ad SET clickCount = clickCount+1 , impressions = impressions+1 , amountLeft = amountLeft - 2 WHERE id = ? Returning *";
+          "UPDATE Ad SET clickCount = clickCount+1 , amountLeft = amountLeft - 2 WHERE id = ? Returning *";
     } else {
       sql = "UPDATE Ad SET impressions = impressions+1 , amountLeft = amountLeft - 1 WHERE id = ? Returning *";
     }
@@ -96,7 +100,7 @@ public class AdDaoImpl implements AdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing connection", e);
         }
       }
     }
@@ -126,7 +130,7 @@ public class AdDaoImpl implements AdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing connection", e);
         }
       }
     }
@@ -155,7 +159,36 @@ public class AdDaoImpl implements AdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing connection", e);
+        }
+      }
+    }
+    return null;
+  }
+
+  @Override
+  public Ad getAdByLocation(Location model) {
+    String sql = "select * from AD where fence @> ?";
+    Connection conn = getConnection();
+    List<Ad> adList = new ArrayList<>();
+    Random rn = new Random();
+
+    try {
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      pstmt.setObject(1, model.getLocation());
+      ResultSet rs = pstmt.executeQuery();
+      while (rs.next()) {
+        adList.add(getAd(rs));
+      }
+      return adList.get(rn.nextInt(adList.size()));
+    } catch (SQLException e) {
+      LOG.error("Error getting ad by name", e);
+    } finally {
+      if (conn == null) {
+        try {
+          conn.close();
+        } catch (SQLException e) {
+          LOG.error("Error closing connection", e);
         }
       }
     }
@@ -184,7 +217,7 @@ public class AdDaoImpl implements AdDao {
         try {
           conn.close();
         } catch (SQLException e) {
-          e.printStackTrace();
+          LOG.error("Error closing connection", e);
         }
       }
     }
