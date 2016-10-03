@@ -29,13 +29,17 @@ public class Application {
        */
 
   public static Connection getConnection() {
-    try {
-      Class.forName("org.postgresql.Driver");
-      return DriverManager.getConnection(connection, username, password);
-    } catch (Exception e) {
-      LOG.error("error connecting to db", e);
+    if (conn == null) {
+      try {
+        Class.forName("org.postgresql.Driver");
+        return DriverManager.getConnection(connection, username, password);
+      } catch (Exception e) {
+        LOG.error("error connecting to db", e);
+      }
+      return null;
+    } else {
+      return conn;
     }
-    return null;
   }
 
   public static void main(String[] args) {

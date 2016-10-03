@@ -8,105 +8,104 @@ import java.io.Serializable;
 //@Entity
 public class Ad implements Serializable {
 
+  int id;
 
-    //@Column(name = "id", nullable = false)
-    int id;
+  int imageId;
 
-    //@Column(name = "imageId", nullable = false)
-    int imageId;
+  int impressions;
 
-    //@Column(name = "impressions", nullable = false)
-    int impressions;
+  float budget;
 
+  float amountLeft;
 
-    //@Column(name = "boundaryId", nullable = true)
-    int boundaryId;
+  String name;
 
-    //@Column(name = "budget", nullable = true)
-    float budget;
+  String country;
 
-    //@Column(name = "amountLeft", nullable = true)
-    float amountLeft;
+  int clickCount;
 
-    //@Column(name = "name", nullable = false)
-    String name;
+  int boundaryId;
 
-    //@Column(name = "country", nullable = false)
-    String country;
+  int personId;
 
 
-    //@Column(name = "clickCount", nullable = false)
-    int clickCount;
+  public int getId() {
+    return id;
+  }
 
-    public int getId() {
-        return id;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getImpressions() {
+    return impressions;
+  }
 
-    public int getImpressions() {
-        return impressions;
-    }
+  public void setImpressions(int impressions) {
+    this.impressions = impressions;
+  }
 
-    public void setImpressions(int impressions) {
-        this.impressions = impressions;
-    }
+  public float getBudget() {
+    return budget;
+  }
 
-    public float getBudget() {
-        return budget;
-    }
+  public void setBudget(float budget) {
+    this.budget = budget;
+  }
 
-    public void setBudget(float budget) {
-        this.budget = budget;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getCountry() {
+    return country;
+  }
 
-    public String getCountry() {
-        return country;
-    }
+  public void setCountry(String country) {
+    this.country = country;
+  }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
+  public float getAmountLeft() {
+    return amountLeft;
+  }
 
-    public float getAmountLeft() {
-        return amountLeft;
-    }
+  public void setAmountLeft(float amountLeft) {
+    this.amountLeft = amountLeft;
+  }
 
-    public void setAmountLeft(float amountLeft) {
-        this.amountLeft = amountLeft;
-    }
+  public int getClickCount() {
+    return clickCount;
+  }
 
-    public int getBoundaryId() {
-        return boundaryId;
-    }
+  public void setClickCount(int clickCount) {
+    this.clickCount = clickCount;
+  }
 
-    public void setBoundaryId(int boundaryId) {
-        this.boundaryId = boundaryId;
-    }
+  public int getImageId() {
+    return imageId;
+  }
 
-    public int getClickCount() {
-        return clickCount;
-    }
+  public void setImageId(int imageId) {
+    this.imageId = imageId;
+  }
 
-    public void setClickCount(int clickCount) {
-        this.clickCount = clickCount;
-    }
+  public int getBoundaryId() {
+    return boundaryId;
+  }
 
-    public int getImageId() {
-        return imageId;
-    }
+  public void setBoundaryId(int boundaryId) {
+    this.boundaryId = boundaryId;
+  }
 
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
-    }
+  public int getPersonId() {
+    return personId;
+  }
+
+  public void setPersonId(int personId) {
+    this.personId = personId;
+  }
 }
