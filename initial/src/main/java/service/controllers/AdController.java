@@ -37,6 +37,7 @@ public class AdController {
     Ad op1 = ob1.insertAd(ad);
     LOG.info("Ad inserted");
     Person op2 = new Person();
+    op2.setId(ad.getPersonId());
     ob2.linkAdPerson(op1, op2);
     LOG.info("Ad Linked with person");
     op2.setId(op1.getPersonId());

@@ -12,11 +12,11 @@ public interface AdDao {
 
   public Ad insertAd(Ad model);
 
-
   public Ad clickAd(Ad model);
 
-
   public Ad getAdById(Ad model);
+
+  public Ad getAdByName(Ad model);
 
 
   public List<Ad> getAllAds();

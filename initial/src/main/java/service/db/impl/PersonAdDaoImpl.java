@@ -25,6 +25,10 @@ public class PersonAdDaoImpl implements PersonAdDao {
 
   @Override
   public PersonAd linkAdPerson(Ad source, Person dest) {
+    PersonAd pa = getPersonAdMap(source, dest);
+    if (pa != null) {
+      return pa;
+    }
     String sql =
         "INSERT INTO PERSONAD (adId,personId) VALUES (?,?) Returning *";
     Connection conn = getConnection();
@@ -87,7 +91,7 @@ public class PersonAdDaoImpl implements PersonAdDao {
   @Override
   public PersonAd deleteAdPerson(Ad source, Person dest) {
     String sql =
-        "Delete from PERSONAD where adId = ?  where personId = ? Returning *";
+        "Delete from PERSONAD where adId = ?  and personId = ? Returning *";
     Connection conn = getConnection();
 
     try {
@@ -100,6 +104,35 @@ public class PersonAdDaoImpl implements PersonAdDao {
       }
     } catch (SQLException e) {
       LOG.error("Error deleting person-ad", e);
+    } finally {
+      if (conn == null) {
+        try {
+          conn.close();
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+    return null;
+
+  }
+
+  @Override
+  public PersonAd getPersonAdMap(Ad source, Person dest) {
+    String sql =
+        "Select * from PERSONAD where adId = ? and personId = ? limit 1";
+    Connection conn = getConnection();
+
+    try {
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      pstmt.setInt(1, source.getId());
+      pstmt.setInt(2, dest.getId());
+      ResultSet rs = pstmt.executeQuery();
+      if (rs.next()) {
+        return getPersonAd(rs);
+      }
+    } catch (SQLException e) {
+      LOG.error("Error fetching person-ad mapping", e);
     } finally {
       if (conn == null) {
         try {

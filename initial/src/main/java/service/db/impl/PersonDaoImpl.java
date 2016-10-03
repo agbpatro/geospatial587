@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import service.Application;
 import service.db.dao.PersonDao;
 import service.db.model.Person;
 
@@ -25,6 +24,11 @@ public class PersonDaoImpl implements PersonDao {
 
   @Override
   public Person insertPerson(Person model) {
+
+    Person p = getPersonByName(model);
+    if (p != null) {
+      return p;
+    }
     String sql =
         "INSERT INTO PERSON (NAME, CITY, AGE) VALUES (?,?,?) Returning *";
     Connection conn = getConnection();
@@ -54,6 +58,62 @@ public class PersonDaoImpl implements PersonDao {
     }
     return null;
 
+  }
+
+  @Override
+  public Person getPersonById(Person model) {
+    String sql = "Select * from Person where id = ?";
+    Connection conn = getConnection();
+    try {
+      //conn = dataSource.getConnection();
+      //conn = getConnection();
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      pstmt.setInt(1, model.getId());
+      //int count = pstmt.executeUpdate();
+      ResultSet rs = pstmt.executeQuery();
+      if (rs.next()) {
+        return getPerson(rs);
+      }
+    } catch (SQLException e) {
+      LOG.error("Error getting person by id", e);
+    } finally {
+      if (conn == null) {
+        try {
+          conn.close();
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+    return null;
+  }
+
+  @Override
+  public Person getPersonByName(Person model) {
+    String sql = "Select * from Person where name = ?";
+    Connection conn = getConnection();
+    try {
+      //conn = dataSource.getConnection();
+      //conn = getConnection();
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      pstmt.setString(1, model.getName());
+      //int count = pstmt.executeUpdate();
+      ResultSet rs = pstmt.executeQuery();
+      if (rs.next()) {
+        return getPerson(rs);
+      }
+    } catch (SQLException e) {
+      LOG.error("Error getting person by id", e);
+    } finally {
+      if (conn == null) {
+        try {
+          conn.close();
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+    return null;
   }
 
   @Override

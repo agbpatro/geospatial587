@@ -11,6 +11,10 @@ public interface PersonDao {
 
   public Person insertPerson(Person model);
 
+  public Person getPersonById(Person model);
+
+  public Person getPersonByName(Person model);
+
   public List<Person> getAllPersons();
 
 }

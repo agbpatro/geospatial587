@@ -24,6 +24,10 @@ public class AdDaoImpl implements AdDao {
 
   @Override
   public Ad insertAd(Ad model) {
+    Ad a = getAdByName(model);
+    if (a != null) {
+      return a;
+    }
     String sql =
         "INSERT INTO AD (NAME, COUNTRY, CLICKCOUNT, IMPRESSIONS) VALUES (?,?,?,?) Returning *";
     Connection conn = getConnection();
@@ -91,7 +95,7 @@ public class AdDaoImpl implements AdDao {
 
   @Override
   public Ad getAdById(Ad model) {
-    String sql = "Select * from AD where id = ?";
+    String sql = "Select * from AD where id = ? limit 1";
     Connection conn = getConnection();
 
     try {
@@ -106,6 +110,35 @@ public class AdDaoImpl implements AdDao {
       }
     } catch (SQLException e) {
       LOG.error("Error getting ad by id", e);
+    } finally {
+      if (conn == null) {
+        try {
+          conn.close();
+        } catch (SQLException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+    return null;
+  }
+
+  @Override
+  public Ad getAdByName(Ad model) {
+    String sql = "Select * from AD where name = ? limit 1";
+    Connection conn = getConnection();
+
+    try {
+      //conn = dataSource.getConnection();
+      //conn = getConnection();
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      pstmt.setString(1, model.getName());
+      //int count = pstmt.executeUpdate();
+      ResultSet rs = pstmt.executeQuery();
+      if (rs.next()) {
+        return getAd(rs);
+      }
+    } catch (SQLException e) {
+      LOG.error("Error getting ad by name", e);
     } finally {
       if (conn == null) {
         try {

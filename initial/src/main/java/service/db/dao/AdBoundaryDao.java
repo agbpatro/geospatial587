@@ -1,7 +1,5 @@
 package service.db.dao;
 
-import java.util.List;
-
 import service.db.model.Ad;
 import service.db.model.AdBoundary;
 import service.db.model.Boundary;
@@ -16,6 +14,8 @@ public interface AdBoundaryDao {
   public AdBoundary updateAdBoundary(Ad source, Boundary dest);
 
   public AdBoundary deleteAdBoundary(Ad source, Boundary dest);
+
+  public AdBoundary getAdBoundaryMap(Ad source, Boundary dest);
 
 
 }

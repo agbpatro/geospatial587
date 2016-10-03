@@ -16,5 +16,7 @@ public interface PersonAdDao {
 
   public PersonAd deleteAdPerson(Ad source, Person dest);
 
+  public PersonAd getPersonAdMap(Ad source, Person dest);
+
 
 }
