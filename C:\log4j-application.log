@@ -2209,3 +2209,38 @@ Unconditional classes:
 2016-10-02 17:56:54 INFO  AdController:66 - Ad updated click count
 2016-10-02 17:56:55 INFO  AdController:66 - Ad updated click count
 2016-10-02 17:56:55 INFO  AdController:66 - Ad updated click count
+2016-10-02 18:07:48 INFO  Application:48 - Starting Application on Abhisheks-MacBook-Air.local with PID 82674 (/Users/abhishek/Documents/USC/Projects/geospatial587/target/classes started by abhishek in /Users/abhishek/Documents/USC/Projects/geospatial587)
+2016-10-02 18:07:48 INFO  Application:661 - No active profile set, falling back to default profiles: default
+2016-10-02 18:07:49 INFO  AnnotationConfigEmbeddedWebApplicationContext:581 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Oct 02 18:07:49 PDT 2016]; root of context hierarchy
+2016-10-02 18:07:49 INFO  Version:30 - HV000001: Hibernate Validator 5.2.4.Final
+2016-10-02 18:07:51 INFO  TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2016-10-02 18:07:51 INFO  ContextLoader:276 - Root WebApplicationContext: initialization completed in 2504 ms
+2016-10-02 18:07:51 INFO  ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2016-10-02 18:07:51 INFO  FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-10-02 18:07:51 INFO  FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-10-02 18:07:51 INFO  FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-10-02 18:07:51 INFO  FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2016-10-02 18:07:52 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Oct 02 18:07:49 PDT 2016]; root of context hierarchy
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/clickad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.clickAd(service.db.model.Ad)
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/buildad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.buildAd(service.db.model.Ad)
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getads],methods=[GET]}" onto public java.lang.String service.controllers.AdController.getAllAds()
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/boundary/new],methods=[POST]}" onto public java.lang.String service.controllers.BoundaryController.buildBoundary(service.db.model.Boundary)
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/]}" onto public java.lang.String service.controllers.DummyController.index()
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/postSupplier],methods=[POST],produces=[application/json]}" onto public java.lang.String service.controllers.DummyController.redire(org.json.JSONObject)
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/post/{id}],methods=[POST]}" onto public java.lang.String service.controllers.DummyController.postCall(java.lang.String,java.lang.String)
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/{ip}],methods=[GET]}" onto public java.lang.String service.controllers.DummyController.getCall(java.lang.String)
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/service]}" onto public java.lang.String service.controllers.DummyController.index1()
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersons],methods=[GET]}" onto public java.lang.String service.controllers.PersonController.getAllAds()
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/addperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.addPerson(service.db.model.Person)
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-10-02 18:07:52 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-10-02 18:07:52 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-02 18:07:52 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-02 18:07:52 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-10-02 18:07:52 INFO  AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2016-10-02 18:07:52 INFO  TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2016-10-02 18:07:52 INFO  Application:57 - Started Application in 4.51 seconds (JVM running for 6.278)
+2016-10-02 18:07:52 INFO  Application:51 - Application online
+2016-10-02 18:08:04 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-02 18:08:04 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2016-10-02 18:08:05 INFO  AdController:64 - Ad updated click count
