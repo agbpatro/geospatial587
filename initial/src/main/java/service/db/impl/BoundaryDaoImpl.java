@@ -9,23 +9,24 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import service.db.dao.AdDao;
-import service.db.model.Ad;
+import service.db.dao.BoundaryDao;
+import service.db.model.Boundary;
 
 import static service.Application.getConnection;
-import static service.response.ResultWrapper.getAd;
+import static service.response.ResultWrapper.getBoundary;
 
 /**
  * Created by abhishek on 10/2/16.
  */
-public class AdDaoImpl implements AdDao {
+public class BoundaryDaoImpl implements BoundaryDao {
 
-  final static Logger LOG = Logger.getLogger(AdDaoImpl.class);
+  final static Logger LOG = Logger.getLogger(BoundaryDaoImpl.class);
+
 
   @Override
-  public Ad insertAd(Ad model) {
+  public Boundary insertBoundary(Boundary model) {
     String sql =
-        "INSERT INTO AD (NAME, COUNTRY, CLICKCOUNT, IMPRESSIONS) VALUES (?,?,?,?) Returning *";
+        "INSERT INTO BOUNDARY (NAME) VALUES (?) Returning *";
     Connection conn = getConnection();
 
     try {
@@ -33,17 +34,13 @@ public class AdDaoImpl implements AdDao {
       //conn = getConnection();
       PreparedStatement pstmt = conn.prepareStatement(sql);
       pstmt.setString(1, model.getName());
-      pstmt.setString(2, model.getCountry());
-      pstmt.setInt(3, model.getClickCount());
-      pstmt.setInt(4, model.getImpressions());
       //int count = pstmt.executeUpdate();
       ResultSet rs = pstmt.executeQuery();
-
       if (rs.next()) {
-        return getAd(rs);
+        return getBoundary(rs);
       }
     } catch (SQLException e) {
-      LOG.error("Error inserting ad", e);
+      LOG.error("Error inserting boundary", e);
     } finally {
       if (conn == null) {
         try {
@@ -57,11 +54,9 @@ public class AdDaoImpl implements AdDao {
 
   }
 
-
   @Override
-  public Ad clickAd(Ad model) {
-    String sql =
-        "UPDATE Ad SET clickCount = clickCount+1 WHERE id = ? Returning *";
+  public Boundary getBoundaryById(Boundary model) {
+    String sql = "Select * from Boundary where id = ? limit 1";
     Connection conn = getConnection();
 
     try {
@@ -72,40 +67,10 @@ public class AdDaoImpl implements AdDao {
       //int count = pstmt.executeUpdate();
       ResultSet rs = pstmt.executeQuery();
       if (rs.next()) {
-        return getAd(rs);
+        getBoundary(rs);
       }
     } catch (SQLException e) {
-      LOG.error("Error updating click count of ad", e);
-    } finally {
-      if (conn == null) {
-        try {
-          conn.close();
-        } catch (SQLException e) {
-          e.printStackTrace();
-        }
-      }
-    }
-    return null;
-
-  }
-
-  @Override
-  public Ad getAdById(Ad model) {
-    String sql = "Select * from AD where id = ?";
-    Connection conn = getConnection();
-
-    try {
-      //conn = dataSource.getConnection();
-      //conn = getConnection();
-      PreparedStatement pstmt = conn.prepareStatement(sql);
-      pstmt.setInt(1, model.getId());
-      //int count = pstmt.executeUpdate();
-      ResultSet rs = pstmt.executeQuery();
-      if (rs.next()) {
-        return getAd(rs);
-      }
-    } catch (SQLException e) {
-      LOG.error("Error getting ad by id", e);
+      LOG.error("Error getting all boundaries", e);
     } finally {
       if (conn == null) {
         try {
@@ -119,10 +84,10 @@ public class AdDaoImpl implements AdDao {
   }
 
   @Override
-  public List<Ad> getAllAds() {
-    String sql = "Select * from AD";
+  public List<Boundary> getAllBoundaries() {
+    String sql = "Select * from Boundary";
     Connection conn = getConnection();
-    List<Ad> adList = new ArrayList<>();
+    List<Boundary> boundaryList = new ArrayList<>();
 
     try {
       //conn = dataSource.getConnection();
@@ -131,10 +96,10 @@ public class AdDaoImpl implements AdDao {
       //int count = pstmt.executeUpdate();
       ResultSet rs = pstmt.executeQuery();
       while (rs.next()) {
-        adList.add(getAd(rs));
+        boundaryList.add(getBoundary(rs));
       }
     } catch (SQLException e) {
-      LOG.error("Error getting all ads", e);
+      LOG.error("Error getting all boundaries", e);
     } finally {
       if (conn == null) {
         try {
@@ -144,7 +109,6 @@ public class AdDaoImpl implements AdDao {
         }
       }
     }
-    return adList;
+    return boundaryList;
   }
-
 }

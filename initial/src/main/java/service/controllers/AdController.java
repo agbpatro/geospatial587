@@ -7,8 +7,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 import service.db.impl.AdDaoImpl;
+import service.db.impl.PersonAdDaoImpl;
 import service.db.model.Ad;
+import service.db.model.Person;
 
 import static service.response.JsonResponse.JSONAd;
 
@@ -21,17 +25,44 @@ import static service.response.JsonResponse.JSONAd;
 public class AdController {
 
 
-
   final static Logger LOG = Logger.getLogger(AdController.class);
 
-  @RequestMapping(value = "/buildAd",
+  @RequestMapping(value = "/buildad",
       method = RequestMethod.POST,
       headers = {"Content-type=application/json"})
   @ResponseBody
   public String buildAd(@RequestBody Ad ad) {
-    AdDaoImpl ob = new AdDaoImpl();
-    Ad op = ob.insertAd(ad);
+    AdDaoImpl ob1 = new AdDaoImpl();
+    PersonAdDaoImpl ob2 = new PersonAdDaoImpl();
+    Ad op1 = ob1.insertAd(ad);
     LOG.info("Ad inserted");
+    Person op2 = new Person();
+    ob2.linkAdPerson(op1, op2);
+    LOG.info("Ad Linked with person");
+    op2.setId(op1.getPersonId());
+    return JSONAd(op1);
+  }
+
+
+  @RequestMapping(value = "/getads",
+      method = RequestMethod.GET)
+  @ResponseBody
+  public String getAllAds() {
+    AdDaoImpl ob = new AdDaoImpl();
+    List<Ad> op = ob.getAllAds();
+    LOG.info("all ads fetched");
+    return JSONAd(op);
+  }
+
+
+  @RequestMapping(value = "/clickad",
+      method = RequestMethod.POST,
+      headers = {"Content-type=application/json"})
+  @ResponseBody
+  public String clickAd(@RequestBody Ad ad) {
+    AdDaoImpl ob = new AdDaoImpl();
+    Ad op = ob.clickAd(ad);
+    LOG.info("Ad updated click count");
     return JSONAd(op);
   }
 

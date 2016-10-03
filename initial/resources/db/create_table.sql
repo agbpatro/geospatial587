@@ -5,12 +5,10 @@ DROP TABLE IF EXISTS ADBOUNDARY;
 DROP TABLE IF EXISTS PERSONAD;
 
 
-
 CREATE TABLE AD (
   id          SERIAL PRIMARY KEY,
   name        VARCHAR(30),
   imageId     SERIAL,
-  boundaryId  INTEGER,
   clickCount  INTEGER,
   impressions INTEGER,
   budget      FLOAT,
@@ -21,13 +19,14 @@ CREATE TABLE AD (
 CREATE TABLE PERSON (
   id   SERIAL PRIMARY KEY,
   age  INTEGER,
-  name VARCHAR(10),
-  city VARCHAR(20)
+  name VARCHAR(30),
+  city VARCHAR(30)
 );
 
 
 CREATE TABLE BOUNDARY (
-  id SERIAL PRIMARY KEY
+  id   SERIAL PRIMARY KEY,
+  name VARCHAR(30)
 );
 
 

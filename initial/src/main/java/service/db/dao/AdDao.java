@@ -1,5 +1,7 @@
 package service.db.dao;
 
+import java.util.List;
+
 import service.db.model.Ad;
 
 /**
@@ -9,4 +11,13 @@ public interface AdDao {
 
 
   public Ad insertAd(Ad model);
+
+
+  public Ad clickAd(Ad model);
+
+
+  public Ad getAdById(Ad model);
+
+
+  public List<Ad> getAllAds();
 }

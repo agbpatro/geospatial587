@@ -49,19 +49,9 @@ public class JsonResponse {
   }
 
   public static String JSONPerson(Person person) {
-    JSONObject obj = new JSONObject();
-
-    try {
-      obj.put("id", person.getId());
-      obj.put("name", person.getName());
-      obj.put("age", person.getAge());
-      obj.put("city", person.getCity());
-      return obj.toString();
-
-    } catch (JSONException e) {
-      LOG.error("Error parsing person object", e);
-      return "";
-    }
+    ArrayList<Person> temp = new ArrayList<>();
+    temp.add(person);
+    return JSONPerson(temp);
   }
 
 
@@ -75,19 +65,21 @@ public class JsonResponse {
     JSONArray responseArray = new JSONArray();
     try {
       for (Ad ad : ads) {
-
-        JSONObject obj = new JSONObject();
-        obj.put("id", ad.getId());
-        obj.put("imageId", ad.getImageId());
-        obj.put("name", ad.getName());
-        obj.put("budget", ad.getBudget());
-        obj.put("country", ad.getCountry());
-        obj.put("impressions", ad.getCountry());
-        obj.put("amountLeft", ad.getAmountLeft());
-        obj.put("boundaryId", ad.getBoundaryId());
-        obj.put("clickCount", ad.getClickCount());
-        obj.put("ctr", (ad.getClickCount() * 100.0) / (1.0 * ad.getImpressions()));
-        responseArray.put(obj);
+        if (ad != null) {
+          JSONObject obj = new JSONObject();
+          obj.put("id", ad.getId());
+          obj.put("boundaryId", ad.getBoundaryId());
+          obj.put("personId", ad.getPersonId());
+          obj.put("imageId", ad.getImageId());
+          obj.put("name", ad.getName());
+          obj.put("budget", ad.getBudget());
+          obj.put("country", ad.getCountry());
+          obj.put("impressions", ad.getImpressions());
+          obj.put("amountLeft", ad.getAmountLeft());
+          obj.put("clickCount", ad.getClickCount());
+          obj.put("ctr", (ad.getClickCount() * 100.0) / (1.0 * ad.getImpressions()));
+          responseArray.put(obj);
+        }
       }
       return responseArray.toString();
     } catch (JSONException e) {
@@ -98,10 +90,33 @@ public class JsonResponse {
   }
 
 
+  public static String JSONPerson(List<Person> persons) {
+    JSONArray responseArray = new JSONArray();
+    try {
+      for (Person person : persons) {
+        if (person != null) {
+          JSONObject obj = new JSONObject();
+          obj.put("id", person.getId());
+          obj.put("name", person.getName());
+          obj.put("age", person.getAge());
+          obj.put("city", person.getCity());
+          responseArray.put(obj);
+        }
+      }
+      return responseArray.toString();
+    } catch (JSONException e) {
+      LOG.error("Error parsing person object", e);
+      return "";
+    }
+
+  }
+
+
   public static String JSONBoundary(Boundary boundary) {
     JSONObject obj = new JSONObject();
     try {
       obj.put("id", boundary.getId());
+      obj.put("adId", boundary.getAdId());
       return obj.toString();
     } catch (JSONException e) {
       LOG.error("Error parsing boundary object", e);
