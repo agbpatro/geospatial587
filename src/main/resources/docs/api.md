@@ -103,7 +103,7 @@
 `curl -X POST  -d '{    "id" : 10    }' "http://localhost:8080/v1/ad/clickad"`
 
 #Response
-```
+```json
 [
   {
     "ctr": 0,
@@ -129,7 +129,7 @@
 `curl -X POST  -d '{    "id" : 10    }' "http://localhost:8080/v1/ad/impressionad"`
 
 #Response
-```
+```json
 [
   {
     "ctr": 0,
@@ -147,3 +147,4 @@
     "budget": 10000
   }
 ]
+```
