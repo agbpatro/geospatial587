@@ -25,8 +25,7 @@ public class BoundaryController {
   final static Logger LOG = Logger.getLogger(BoundaryController.class);
 
   @RequestMapping(value = "/new",
-      method = RequestMethod.POST,
-      headers = {"Content-type=application/json"})
+      method = RequestMethod.POST)
   @ResponseBody
   public String buildBoundary(@RequestBody Boundary boundary) {
     BoundaryDaoImpl ob = new BoundaryDaoImpl();

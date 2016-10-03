@@ -22,8 +22,7 @@ public class PersonController {
   final static Logger LOG = Logger.getLogger(PersonController.class);
 
   @RequestMapping(value = "/addperson",
-      method = RequestMethod.POST,
-      headers = {"Content-type=application/json"})
+      method = RequestMethod.POST)
   @ResponseBody
   public String addPerson(@RequestBody Person person) {
     PersonDaoImpl ob = new PersonDaoImpl();

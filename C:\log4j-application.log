@@ -2198,3 +2198,14 @@ Unconditional classes:
 2016-10-02 17:49:26 INFO  TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
 2016-10-02 17:49:26 INFO  Application:57 - Started Application in 5.02 seconds (JVM running for 6.071)
 2016-10-02 17:49:26 INFO  Application:51 - Application online
+2016-10-02 17:53:49 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2016-10-02 17:53:49 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 33 ms
+2016-10-02 17:53:49 INFO  PersonController:31 - Person added
+2016-10-02 17:55:05 INFO  AdController:38 - Ad inserted
+2016-10-02 17:55:05 INFO  AdController:42 - Ad Linked with person
+2016-10-02 17:56:01 INFO  AdController:54 - all ads fetched
+2016-10-02 17:56:45 INFO  AdController:66 - Ad updated click count
+2016-10-02 17:56:53 INFO  AdController:66 - Ad updated click count
+2016-10-02 17:56:54 INFO  AdController:66 - Ad updated click count
+2016-10-02 17:56:55 INFO  AdController:66 - Ad updated click count
+2016-10-02 17:56:55 INFO  AdController:66 - Ad updated click count
