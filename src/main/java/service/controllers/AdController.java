@@ -28,8 +28,7 @@ public class AdController {
   final static Logger LOG = Logger.getLogger(AdController.class);
 
   @RequestMapping(value = "/buildad",
-      method = RequestMethod.POST,
-      headers = {"Content-type=application/json"})
+      method = RequestMethod.POST)
   @ResponseBody
   public String buildAd(@RequestBody Ad ad) {
     AdDaoImpl ob1 = new AdDaoImpl();
@@ -57,8 +56,7 @@ public class AdController {
 
 
   @RequestMapping(value = "/clickad",
-      method = RequestMethod.POST,
-      headers = {"Content-type=application/json"})
+      method = RequestMethod.POST)
   @ResponseBody
   public String clickAd(@RequestBody Ad ad) {
     AdDaoImpl ob = new AdDaoImpl();
