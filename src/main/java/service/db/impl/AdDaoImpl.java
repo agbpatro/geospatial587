@@ -35,7 +35,7 @@ public class AdDaoImpl implements AdDao {
     }
     String
         sql =
-        "INSERT INTO AD (NAME, COUNTRY, CLICKCOUNT, BUDGET, AMOUNTLEFT, TYPE, URL, FENCE) VALUES (?,?,?,?,?,?,?,?) Returning *";
+        "INSERT INTO AD (NAME, COUNTRY, CLICKCOUNT, BUDGET, AMOUNTLEFT, TYPE, VIDEOURL, FENCE, CLICKURL) VALUES (?,?,?,?,?,?,?,?,?) Returning *";
     Connection conn = getConnection();
 
     try {
@@ -48,8 +48,9 @@ public class AdDaoImpl implements AdDao {
       pstmt.setFloat(4, model.getBudget());
       pstmt.setFloat(5, model.getAmountLeft());
       pstmt.setString(6, model.getType());
-      pstmt.setString(7, model.getUrl());
+      pstmt.setString(7, model.getVideourl());
       pstmt.setObject(8, model.getFence());
+      pstmt.setObject(9, model.getClickurl());
       //int count = pstmt.executeUpdate();
       ResultSet rs = pstmt.executeQuery();
 

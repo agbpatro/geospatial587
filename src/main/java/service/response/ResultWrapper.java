@@ -26,7 +26,8 @@ public class ResultWrapper {
     ad.setBudget(rs.getFloat("budget"));
     ad.setCountry(rs.getString("country"));
     ad.setType(rs.getString("type"));
-    ad.setUrl(rs.getString("url"));
+    ad.setVideourl(rs.getString("videourl"));
+    ad.setClickurl(rs.getString("clickurl"));
     ad.setAmountLeft(rs.getFloat("amountLeft"));
     ad.setFence(rs.getString("fence"));
     return ad;

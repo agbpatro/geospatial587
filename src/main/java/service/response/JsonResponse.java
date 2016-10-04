@@ -72,7 +72,8 @@ public class JsonResponse {
           obj.put("id", ad.getId());
           obj.put("name", ad.getName());
           obj.put("type", ad.getType());
-          obj.put("url", ad.getUrl());
+          obj.put("videourl", ad.getVideourl());
+          obj.put("clickurl", ad.getClickurl());
           obj.put("personId", ad.getPersonId());
           obj.put("imageId", ad.getImageId());
           obj.put("name", ad.getName());

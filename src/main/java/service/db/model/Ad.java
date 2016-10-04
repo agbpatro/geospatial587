@@ -31,15 +31,15 @@ public class Ad implements Serializable {
 
   int clickCount;
 
-  int boundaryId;
-
   int personId;
 
-  String url;
+  String videourl;
 
   String type;
 
   PGpolygon fence;
+
+  String clickurl;
 
   public int getId() {
     return id;
@@ -113,12 +113,12 @@ public class Ad implements Serializable {
     this.personId = personId;
   }
 
-  public String getUrl() {
-    return url;
+  public String getVideourl() {
+    return videourl;
   }
 
-  public void setUrl(String url) {
-    this.url = url;
+  public void setVideourl(String videourl) {
+    this.videourl = videourl;
   }
 
   public String getType() {
@@ -141,5 +141,11 @@ public class Ad implements Serializable {
     }
   }
 
+  public String getClickurl() {
+    return clickurl;
+  }
 
+  public void setClickurl(String clickurl) {
+    this.clickurl = clickurl;
+  }
 }
