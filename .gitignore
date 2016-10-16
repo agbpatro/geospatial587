@@ -15,4 +15,4 @@ dependency-reduced-pom.xml
 README.html
 .idea
 *.iml
-C:\log4j-application.log
+./C:\log4j-application.log

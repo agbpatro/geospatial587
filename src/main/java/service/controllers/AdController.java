@@ -14,6 +14,7 @@ import service.db.impl.PersonAdDaoImpl;
 import service.db.model.Ad;
 import service.db.model.Location;
 import service.db.model.Person;
+import service.db.model.PersonAd;
 
 import static service.db.impl.AdDaoImpl.CLICK;
 import static service.db.impl.AdDaoImpl.IMPRESSION;
@@ -40,9 +41,9 @@ public class AdController {
     LOG.info("Ad inserted");
     Person op2 = new Person();
     op2.setId(ad.getPersonId());
-    ob2.linkAdPerson(op1, op2);
+    PersonAd op3 = ob2.linkAdPerson(op1, op2);
     LOG.info("Ad Linked with person");
-    op2.setId(op1.getPersonId());
+    op1.setPersonId(op3.getPersonId());
     return JSONAd(op1);
   }
 
