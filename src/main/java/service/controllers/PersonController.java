@@ -28,7 +28,9 @@ public class PersonController {
     PersonDaoImpl ob = new PersonDaoImpl();
     Person op = ob.insertPerson(person);
     LOG.info("Person added");
-    return JSONPerson(op);
+    String result = JSONPerson(op);
+    LOG.info(result);
+    return result;
   }
 
 
@@ -39,7 +41,9 @@ public class PersonController {
     PersonDaoImpl ob = new PersonDaoImpl();
     List<Person> op = ob.getAllPersons();
     LOG.info("Persons fetched");
-    return JSONPerson(op);
+    String result = JSONPerson(op);
+    LOG.info(result);
+    return result;
   }
 
 

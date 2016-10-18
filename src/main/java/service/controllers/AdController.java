@@ -44,7 +44,9 @@ public class AdController {
     PersonAd op3 = ob2.linkAdPerson(op1, op2);
     LOG.info("Ad Linked with person");
     op1.setPersonId(op3.getPersonId());
-    return JSONAd(op1);
+    String result = JSONAd(op1);
+    LOG.info(result);
+    return result;
   }
 
 
@@ -55,7 +57,9 @@ public class AdController {
     AdDaoImpl ob = new AdDaoImpl();
     List<Ad> op = ob.getAllAds();
     LOG.info("all ads fetched");
-    return JSONAd(op);
+    String result = JSONAd(op);
+    LOG.info(result);
+    return result;
   }
 
 
@@ -66,7 +70,9 @@ public class AdController {
     AdDaoImpl ob = new AdDaoImpl();
     Ad op = ob.clickAd(ad, CLICK);
     LOG.info("Ad updated click count");
-    return JSONAd(op);
+    String result = JSONAd(op);
+    LOG.info(result);
+    return result;
   }
 
 
@@ -77,7 +83,9 @@ public class AdController {
     AdDaoImpl ob = new AdDaoImpl();
     Ad op = ob.clickAd(ad, IMPRESSION);
     LOG.info("Ad updated impression count");
-    return JSONAd(op);
+    String result = JSONAd(op);
+    LOG.info(result);
+    return result;
   }
 
 
@@ -89,7 +97,9 @@ public class AdController {
     Ad op1 = ob.getAdByLocation(location);
     LOG.info("Ad fetched by location");
     Ad op2 = ob.clickAd(op1, IMPRESSION);
-    return JSONAd(op2);
+    String result = JSONAd(op2);
+    LOG.info(result);
+    return result;
   }
 
 
