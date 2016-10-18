@@ -42,10 +42,10 @@ INSERT INTO person (age,name,city) VALUES (24, 'Shiven Saiwal', 'USA');
 
 
 
-INSERT INTO ad (name,videourl,clickurl,type,imageId,clickCount,impressions,budget,amountLeft,country,fence) VALUES ('Made in India', '', 'video', 1, 0, 9, 10000, 9991, 'USA', '((0,0),(0,10),(10,10),(0,0))');
-INSERT INTO ad (name,videourl,clickurl,type,imageId,clickCount,impressions,budget,amountLeft,country,fence) VALUES ('Harry Potter', '', 'video', 3, 0, 6, 10000, 9994, 'USA', '((0,0),(0,10),(10,10),(0,0))');
-INSERT INTO ad (name,videourl,clickurl,type,imageId,clickCount,impressions,budget,amountLeft,country,fence) VALUES ('Swades', '', 'video', 2, 0, 7, 10000, 9993, 'USA', '((0,0),(0,10),(10,10),(0,0))');
-INSERT INTO ad (name,videourl,clickurl,type,imageId,clickCount,impressions,budget,amountLeft,country,fence) VALUES ('Secret Life of Pets', '', 'video', 4, 0, 6, 10000, 9994, 'USA', '((0,0),(0,10),(10,10),(0,0))'); 
+INSERT INTO ad (name,videourl,clickurl,type,imageId,clickCount,impressions,budget,amountLeft,country,fence) VALUES ('Made in India', '', '', 'video', 1, 0, 9, 10000, 9991, 'USA', '((0,0),(0,10),(10,10),(0,0))');
+INSERT INTO ad (name,videourl,clickurl,type,imageId,clickCount,impressions,budget,amountLeft,country,fence) VALUES ('Harry Potter', '', '', 'video', 3, 0, 6, 10000, 9994, 'USA', '((0,0),(0,10),(10,10),(0,0))');
+INSERT INTO ad (name,videourl,clickurl,type,imageId,clickCount,impressions,budget,amountLeft,country,fence) VALUES ('Swades', '', '', 'video', 2, 0, 7, 10000, 9993, 'USA', '((0,0),(0,10),(10,10),(0,0))');
+INSERT INTO ad (name,videourl,clickurl,type,imageId,clickCount,impressions,budget,amountLeft,country,fence) VALUES ('Secret Life of Pets', '', '', 'video', 4, 0, 6, 10000, 9994, 'USA', '((0,0),(0,10),(10,10),(0,0))');
 
 INSERT INTO personad VALUES (1, 1, 1);
 INSERT INTO personad VALUES (2, 2, 1);
