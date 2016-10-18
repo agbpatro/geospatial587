@@ -169,7 +169,7 @@ public class AdDaoImpl implements AdDao {
 
   @Override
   public Ad getAdByLocation(Location model) {
-    String sql = "select * from AD where fence @> ?";
+    String sql = "select * from AD where fence @> ? and amountLeft > 0";
     Connection conn = getConnection();
     List<Ad> adList = new ArrayList<>();
     Random rn = new Random();
