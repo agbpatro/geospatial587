@@ -96,8 +96,7 @@ public class AdController {
     AdDaoImpl ob = new AdDaoImpl();
     Ad op1 = ob.getAdByLocation(location);
     LOG.info("Ad fetched by location");
-    Ad op2 = ob.clickAd(op1, IMPRESSION);
-    String result = JSONAd(op2);
+    String result = JSONAd(op1);
     LOG.info(result);
     return result;
   }
