@@ -44,11 +44,11 @@ public class PersonController {
   }
 
   @RequestMapping(value = "/getpersonads",
-          method = RequestMethod.GET)
+          method = RequestMethod.POST)
   @ResponseBody
-  public String  getAllpersonAds(@RequestParam(value="name", required=false, defaultValue="Abhishek Patro") String name) {
+  public String  getAllpersonAds(@RequestBody Person person) {
     PersonDaoImpl ob = new PersonDaoImpl();
-    List<Ad> op = ob.getAllPersonAds(name);
+    List<Ad> op = ob.getAllPersonAds(person.getName());
     LOG.info("Person Ads fetched");
     return JSONAd(op);
   }

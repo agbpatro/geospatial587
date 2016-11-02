@@ -202,3 +202,93 @@
   }
 ]
 ```
+
+
+
+#Get Ads for a particular users
+`curl -X POST -H "Content-Type: application/json" -d '{ "name" : "Abhishek Patro" }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/getpersonads"`
+#Response
+```json
+[
+  {
+    "clickurl": "",
+    "ctr": 0,
+    "country": "USA",
+    "imageId": 4,
+    "clickCount": 0,
+    "impressions": 9,
+    "type": "video",
+    "amountLeft": 9991,
+    "videourl": "",
+    "name": "Secret Life of Pets",
+    "personId": 0,
+    "id": 4,
+    "fence": "((0.0,0.0),(0.0,10.0),(10.0,10.0),(0.0,0.0))",
+    "budget": 10000
+  },
+  {
+    "clickurl": "https://en.wikipedia.org/wiki/Casablanca_(film)",
+    "ctr": 0,
+    "country": "USA",
+    "imageId": 4,
+    "clickCount": 0,
+    "impressions": 5,
+    "type": "video",
+    "amountLeft": 9995,
+    "videourl": "https://www.youtube.com/watch?v=w7IWLZcVU64",
+    "name": "Club Havana",
+    "personId": 0,
+    "id": 8,
+    "fence": "((0.0,0.0),(0.0,10.0),(10.0,10.0),(0.0,0.0))",
+    "budget": 10000
+  },
+  {
+    "clickurl": "https://en.wikipedia.org/wiki/Casablanca_(film)",
+    "ctr": 18.181818181818183,
+    "country": "USA",
+    "imageId": 1,
+    "clickCount": 2,
+    "impressions": 9,
+    "type": "video",
+    "amountLeft": 987,
+    "videourl": "https://www.youtube.com/watch?v=w7IWLZcVU64",
+    "name": "Club Havana Part duex",
+    "personId": 0,
+    "id": 5,
+    "fence": "((0.0,0.0),(0.0,10.0),(10.0,10.0),(0.0,0.0))",
+    "budget": 1000
+  },
+  {
+    "clickurl": "",
+    "ctr": 0,
+    "country": "USA",
+    "imageId": 2,
+    "clickCount": 0,
+    "impressions": 8,
+    "type": "video",
+    "amountLeft": 9992,
+    "videourl": "",
+    "name": "Swades",
+    "personId": 0,
+    "id": 3,
+    "fence": "((0.0,0.0),(0.0,10.0),(10.0,10.0),(0.0,0.0))",
+    "budget": 10000
+  },
+  {
+    "clickurl": "https://en.wikipedia.org/wiki/Casablanca_(film)",
+    "ctr": 0,
+    "country": "USA",
+    "imageId": 2,
+    "clickCount": 0,
+    "impressions": 5,
+    "type": "video",
+    "amountLeft": 95,
+    "videourl": "https://www.youtube.com/watch?v=w7IWLZcVU64",
+    "name": "Club Havana Part three",
+    "personId": 0,
+    "id": 6,
+    "fence": "((0.0,0.0),(0.0,10.0),(10.0,10.0),(0.0,0.0))",
+    "budget": 100
+  }
+]
+```
