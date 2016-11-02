@@ -1,6 +1,9 @@
 package service.db.impl;
 
 import org.apache.log4j.Logger;
+import service.db.dao.PersonDao;
+import service.db.model.Ad;
+import service.db.model.Person;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,10 +12,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import service.db.dao.PersonDao;
-import service.db.model.Person;
-
 import static service.Application.getConnection;
+import static service.response.ResultWrapper.getAd;
 import static service.response.ResultWrapper.getPerson;
 
 /**
@@ -143,5 +144,36 @@ public class PersonDaoImpl implements PersonDao {
       }
     }
     return personList;
+  }
+
+  @Override
+  public List<Ad> getAllPersonAds(String name){
+    String sql = "Select * from AD where id IN (Select adId from PERSONAD where personId = (Select id from  Person where name = ?))";
+    Connection conn = getConnection();
+    List<Ad> personAdList = new ArrayList<>();
+
+    try {
+      //conn = dataSource.getConnection();
+      //conn = getConnection();
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      pstmt.setString(1, name);
+      //int count = pstmt.executeUpdate();
+      ResultSet rs = pstmt.executeQuery();
+      while (rs.next()) {
+        personAdList.add(getAd(rs));
+      }
+    } catch (SQLException e) {
+      LOG.error("Error getting all person ads", e);
+    } finally {
+      if (conn == null) {
+        try {
+          conn.close();
+        } catch (SQLException e) {
+          LOG.error("Error closing connection", e);
+        }
+      }
+    }
+
+    return personAdList;
   }
 }
