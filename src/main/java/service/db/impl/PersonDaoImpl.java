@@ -1,9 +1,6 @@
 package service.db.impl;
 
 import org.apache.log4j.Logger;
-import service.db.dao.PersonDao;
-import service.db.model.Ad;
-import service.db.model.Person;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,6 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import service.db.dao.PersonDao;
+import service.db.model.Ad;
+import service.db.model.Person;
 
 import static service.Application.getConnection;
 import static service.response.ResultWrapper.getAd;
@@ -147,8 +148,11 @@ public class PersonDaoImpl implements PersonDao {
   }
 
   @Override
-  public List<Ad> getAllPersonAds(String name){
-    String sql = "Select * from AD where id IN (Select adId from PERSONAD where personId = (Select id from  Person where name = ?))";
+  public List<Ad> getAllPersonAds(Person person) {
+    Person p = getPersonByName(person);
+    String
+        sql =
+        "Select * from AD where id IN (Select adId from PERSONAD where personId = (Select id from  Person where name = ?))";
     Connection conn = getConnection();
     List<Ad> personAdList = new ArrayList<>();
 
@@ -156,11 +160,13 @@ public class PersonDaoImpl implements PersonDao {
       //conn = dataSource.getConnection();
       //conn = getConnection();
       PreparedStatement pstmt = conn.prepareStatement(sql);
-      pstmt.setString(1, name);
+      pstmt.setString(1, p.getName());
       //int count = pstmt.executeUpdate();
       ResultSet rs = pstmt.executeQuery();
       while (rs.next()) {
-        personAdList.add(getAd(rs));
+        Ad temp = getAd(rs);
+        temp.setPersonId(p.getId());
+        personAdList.add(temp);
       }
     } catch (SQLException e) {
       LOG.error("Error getting all person ads", e);

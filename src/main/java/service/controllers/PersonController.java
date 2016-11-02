@@ -48,7 +48,7 @@ public class PersonController {
   @ResponseBody
   public String  getAllpersonAds(@RequestBody Person person) {
     PersonDaoImpl ob = new PersonDaoImpl();
-    List<Ad> op = ob.getAllPersonAds(person.getName());
+    List<Ad> op = ob.getAllPersonAds(person);
     LOG.info("Person Ads fetched");
     return JSONAd(op);
   }
