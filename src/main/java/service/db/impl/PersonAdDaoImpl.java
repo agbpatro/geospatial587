@@ -26,7 +26,7 @@ public class PersonAdDaoImpl implements PersonAdDao {
   @Override
   public PersonAd linkAdPerson(Ad source, Person dest) {
     PersonAd pa = getPersonAdMap(source, dest);
-    if (pa != null) {
+    if (pa != null && pa.getAdId() == source.getId() && pa.getPersonId() == dest.getId() ) {
       return pa;
     }
     String sql =

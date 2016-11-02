@@ -169,7 +169,7 @@ public class AdDaoImpl implements AdDao {
 
   @Override
   public Ad getAdByLocation(Location model) {
-    String sql = "select * from AD where fence @> ?";
+    String sql = "select * from AD where fence @> ? and amountLeft > 0";
     Connection conn = getConnection();
     List<Ad> adList = new ArrayList<>();
     Random rn = new Random();
@@ -181,7 +181,8 @@ public class AdDaoImpl implements AdDao {
       while (rs.next()) {
         adList.add(getAd(rs));
       }
-      return adList.get(rn.nextInt(adList.size()));
+      Ad selectedAd = adList.get(rn.nextInt(adList.size()));
+      return clickAd(selectedAd, IMPRESSION);
     } catch (SQLException e) {
       LOG.error("Error getting ad by name", e);
     } finally {

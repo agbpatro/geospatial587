@@ -1,5 +1,5 @@
 #Add user
-`curl -X POST  -d '{     "name" : "Abhishek Patro",     "city" : "USA",     "age" : 25 }' "http://localhost:8080/v1/person/addperson"`
+`curl -X POST -H "Content-Type: application/json"  -d '{     "name" : "Abhishek Patro",     "city" : "USA",     "age" : 25 }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/addperson"`
  
 #Response
 ```json
@@ -16,7 +16,7 @@
 
 
 #Build Ad
-`curl -X POST -d '{    "name" : "Club Havana",    "country" : "USA",    "budget" : 10000,    "personId" : 2,    "type" : "video",    "videourl" : "https://www.youtube.com/watch?v=w7IWLZcVU64",    "clickurl" : "https://en.wikipedia.org/wiki/Casablanca_(film)",    "fence": "((0,0),(0,10),(10, 10),(0, 0))"}' "http://localhost:8080/v1/ad/buildad"`
+`curl -X POST -H "Content-Type: application/json" -d '{    "name" : "Club Havana",    "country" : "USA",    "budget" : 10000,    "personId" : 2,    "type" : "video",    "videourl" : "https://www.youtube.com/watch?v=w7IWLZcVU64",    "clickurl" : "https://en.wikipedia.org/wiki/Casablanca_(film)",    "fence": "((0,0),(0,10),(10, 10),(0, 0))"}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/buildad"`
 
 #Response
 ```json
@@ -41,7 +41,7 @@
 ```
 
 #Get All Ads
-`curl -X GET "http://localhost:8080/v1/ad/getads"`
+`curl -X GET -H "Content-Type: application/json" "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/getads"`
 
 #Response
 ```json
@@ -127,7 +127,7 @@
 
 
 #Increase Click Count
-`curl -X POST  -d '{    "id" : 5    }' "http://localhost:8080/v1/ad/clickad"`
+`curl -X POST -H "Content-Type: application/json"  -d '{    "id" : 5    }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/clickad"`
 
 #Response
 ```json
@@ -154,7 +154,7 @@
 
 
 #Increase Impression Count
-`curl -X POST  -d '{    "id" : 5    }' "http://localhost:8080/v1/ad/impressionad"`
+`curl -X POST -H "Content-Type: application/json"  -d '{    "id" : 5    }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/impressionad"`
 
 #Response
 ```json
@@ -179,7 +179,7 @@
 ```
 
 #Get single Ad based on location (based on budget,fence,etc parameters)
-`curl -X POST -d '{    "location" : "(2, 8)"}' "http://localhost:8080/v1/ad/getad"`
+`curl -X POST -H "Content-Type: application/json" -d '{    "location" : "(2, 8)"}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/getad"`
 
 #Response
 ```json
