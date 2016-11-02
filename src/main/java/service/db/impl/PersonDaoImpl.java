@@ -148,8 +148,8 @@ public class PersonDaoImpl implements PersonDao {
   }
 
   @Override
-  public List<Ad> getAllPersonAds(Person person) {
-    Person p = getPersonByName(person);
+  public List<Ad> getAllPersonAds(Person model) {
+    Person person = getPersonByName(model);
     String
         sql =
         "Select * from AD where id IN (Select adId from PERSONAD where personId = (Select id from  Person where name = ?))";
@@ -160,12 +160,12 @@ public class PersonDaoImpl implements PersonDao {
       //conn = dataSource.getConnection();
       //conn = getConnection();
       PreparedStatement pstmt = conn.prepareStatement(sql);
-      pstmt.setString(1, p.getName());
+      pstmt.setString(1, person.getName());
       //int count = pstmt.executeUpdate();
       ResultSet rs = pstmt.executeQuery();
       while (rs.next()) {
         Ad temp = getAd(rs);
-        temp.setPersonId(p.getId());
+        temp.setPersonId(person.getId());
         personAdList.add(temp);
       }
     } catch (SQLException e) {

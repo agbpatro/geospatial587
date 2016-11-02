@@ -18,6 +18,6 @@ public interface PersonDao {
 
   public List<Person> getAllPersons();
 
-  public List<Ad> getAllPersonAds(String name);
+  public List<Ad> getAllPersonAds(Person model);
 
 }
