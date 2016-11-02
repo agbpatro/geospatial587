@@ -1,17 +1,14 @@
 package service.controllers;
 
 import org.apache.log4j.Logger;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import service.db.impl.PersonDaoImpl;
+import service.db.model.Ad;
+import service.db.model.Person;
 
 import java.util.List;
 
-import service.db.impl.PersonDaoImpl;
-import service.db.model.Person;
-
+import static service.response.JsonResponse.JSONAd;
 import static service.response.JsonResponse.JSONPerson;
 
 @RestController
@@ -46,5 +43,13 @@ public class PersonController {
     return result;
   }
 
-
+  @RequestMapping(value = "/getpersonads",
+          method = RequestMethod.POST)
+  @ResponseBody
+  public String  getAllpersonAds(@RequestBody Person person) {
+    PersonDaoImpl ob = new PersonDaoImpl();
+    List<Ad> op = ob.getAllPersonAds(person.getName());
+    LOG.info("Person Ads fetched");
+    return JSONAd(op);
+  }
 }
