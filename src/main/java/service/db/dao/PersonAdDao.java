@@ -13,7 +13,7 @@ public interface PersonAdDao {
 
   public PersonAd updateAdPerson(Ad source, Person dest);
 
-  public PersonAd deleteAdPerson(Ad source, Person dest);
+  public PersonAd deleteAdPerson(PersonAd personAd);
 
   public PersonAd getPersonAdMap(Ad source, Person dest);
 

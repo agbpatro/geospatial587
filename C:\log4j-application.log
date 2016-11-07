@@ -2906,3 +2906,448 @@ org.postgresql.util.PSQLException: The column name id was not found in this Resu
 2016-11-02 15:13:24 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
 2016-11-02 15:13:24 INFO  PersonController:52 - Person Ads fetched
 2016-11-02 15:15:25 INFO  PersonController:52 - Person Ads fetched
+2016-11-06 15:28:39 INFO  Version:30 - HV000001: Hibernate Validator 5.2.4.Final
+2016-11-06 15:28:43 INFO  Application:48 - Starting Application on Abhisheks-MacBook-Air.local with PID 5235 (/Users/abhishek/Documents/USC/Projects/geospatial587/target/classes started by abhishek in /Users/abhishek/Documents/USC/Projects/geospatial587)
+2016-11-06 15:28:43 INFO  Application:661 - No active profile set, falling back to default profiles: default
+2016-11-06 15:28:43 INFO  AnnotationConfigEmbeddedWebApplicationContext:581 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:28:43 PST 2016]; root of context hierarchy
+2016-11-06 15:28:45 INFO  TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2016-11-06 15:28:46 INFO  ContextLoader:276 - Root WebApplicationContext: initialization completed in 2323 ms
+2016-11-06 15:28:46 INFO  ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-06 15:28:46 INFO  FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-06 15:28:46 INFO  FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-06 15:28:46 INFO  FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-06 15:28:46 INFO  FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-06 15:28:47 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:28:43 PST 2016]; root of context hierarchy
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/deletead],methods=[POST]}" onto public java.lang.String service.controllers.AdController.deleteAd(service.db.model.PersonAd)
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.getAd(service.db.model.Location)
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/clickad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.clickAd(service.db.model.Ad)
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/buildad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.buildAd(service.db.model.Ad)
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getads],methods=[GET]}" onto public java.lang.String service.controllers.AdController.getAllAds()
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/impressionad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.impressionAd(service.db.model.Ad)
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/]}" onto public java.lang.String service.controllers.DummyController.index()
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/postSupplier],methods=[POST],produces=[application/json]}" onto public java.lang.String service.controllers.DummyController.redire(org.json.JSONObject)
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/post/{id}],methods=[POST]}" onto public java.lang.String service.controllers.DummyController.postCall(java.lang.String,java.lang.String)
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/{ip}],methods=[GET]}" onto public java.lang.String service.controllers.DummyController.getCall(java.lang.String)
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/service]}" onto public java.lang.String service.controllers.DummyController.index1()
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersons],methods=[GET]}" onto public java.lang.String service.controllers.PersonController.getAllAds()
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/addperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.addPerson(service.db.model.Person)
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersonads],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getAllpersonAds(service.db.model.Person)
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-06 15:28:47 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-06 15:28:47 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:28:47 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:28:47 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:28:47 INFO  AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2016-11-06 15:28:48 INFO  TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2016-11-06 15:28:48 INFO  Application:57 - Started Application in 15.098 seconds (JVM running for 17.088)
+2016-11-06 15:28:48 INFO  Application:51 - Application online
+2016-11-06 15:29:47 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-06 15:29:47 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2016-11-06 15:29:48 INFO  PersonController:40 - Persons fetched
+2016-11-06 15:29:48 INFO  PersonController:42 - [{"city":"USA","name":"Karanjeet Singh Sarna","id":1,"age":21},{"city":"USA","name":"Abhishek Patro","id":2,"age":25},{"city":"USA","name":"Shiven Saiwal","id":3,"age":24},{"city":"Bangalore","name":"Sridhar","id":4,"age":24},{"city":"Bangalore","name":"karthik","id":5,"age":22},{"city":"USA","name":"Dummy Person","id":6,"age":23},{"city":"USA","name":"Sagar Narang","id":7,"age":23}]
+2016-11-06 15:29:49 INFO  PersonController:40 - Persons fetched
+2016-11-06 15:29:49 INFO  PersonController:42 - [{"city":"USA","name":"Karanjeet Singh Sarna","id":1,"age":21},{"city":"USA","name":"Abhishek Patro","id":2,"age":25},{"city":"USA","name":"Shiven Saiwal","id":3,"age":24},{"city":"Bangalore","name":"Sridhar","id":4,"age":24},{"city":"Bangalore","name":"karthik","id":5,"age":22},{"city":"USA","name":"Dummy Person","id":6,"age":23},{"city":"USA","name":"Sagar Narang","id":7,"age":23}]
+2016-11-06 15:29:50 INFO  PersonController:40 - Persons fetched
+2016-11-06 15:29:50 INFO  PersonController:42 - [{"city":"USA","name":"Karanjeet Singh Sarna","id":1,"age":21},{"city":"USA","name":"Abhishek Patro","id":2,"age":25},{"city":"USA","name":"Shiven Saiwal","id":3,"age":24},{"city":"Bangalore","name":"Sridhar","id":4,"age":24},{"city":"Bangalore","name":"karthik","id":5,"age":22},{"city":"USA","name":"Dummy Person","id":6,"age":23},{"city":"USA","name":"Sagar Narang","id":7,"age":23}]
+2016-11-06 15:29:51 INFO  PersonController:40 - Persons fetched
+2016-11-06 15:29:51 INFO  PersonController:42 - [{"city":"USA","name":"Karanjeet Singh Sarna","id":1,"age":21},{"city":"USA","name":"Abhishek Patro","id":2,"age":25},{"city":"USA","name":"Shiven Saiwal","id":3,"age":24},{"city":"Bangalore","name":"Sridhar","id":4,"age":24},{"city":"Bangalore","name":"karthik","id":5,"age":22},{"city":"USA","name":"Dummy Person","id":6,"age":23},{"city":"USA","name":"Sagar Narang","id":7,"age":23}]
+2016-11-06 15:29:52 INFO  PersonController:40 - Persons fetched
+2016-11-06 15:29:52 INFO  PersonController:42 - [{"city":"USA","name":"Karanjeet Singh Sarna","id":1,"age":21},{"city":"USA","name":"Abhishek Patro","id":2,"age":25},{"city":"USA","name":"Shiven Saiwal","id":3,"age":24},{"city":"Bangalore","name":"Sridhar","id":4,"age":24},{"city":"Bangalore","name":"karthik","id":5,"age":22},{"city":"USA","name":"Dummy Person","id":6,"age":23},{"city":"USA","name":"Sagar Narang","id":7,"age":23}]
+2016-11-06 15:30:19 INFO  PersonController:27 - Person added
+2016-11-06 15:30:19 INFO  PersonController:29 - [{"city":"USA","name":"Dummy Person","id":6,"age":23}]
+2016-11-06 15:30:20 INFO  PersonController:27 - Person added
+2016-11-06 15:30:20 INFO  PersonController:29 - [{"city":"USA","name":"Dummy Person","id":6,"age":23}]
+2016-11-06 15:30:20 INFO  PersonController:27 - Person added
+2016-11-06 15:30:20 INFO  PersonController:29 - [{"city":"USA","name":"Dummy Person","id":6,"age":23}]
+2016-11-06 15:30:21 INFO  PersonController:27 - Person added
+2016-11-06 15:30:21 INFO  PersonController:29 - [{"city":"USA","name":"Dummy Person","id":6,"age":23}]
+2016-11-06 15:32:08 INFO  AnnotationConfigEmbeddedWebApplicationContext:982 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:28:43 PST 2016]; root of context hierarchy
+2016-11-06 15:32:08 INFO  AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2016-11-06 15:32:27 INFO  Version:30 - HV000001: Hibernate Validator 5.2.4.Final
+2016-11-06 15:32:32 INFO  Application:48 - Starting Application on Abhisheks-MacBook-Air.local with PID 5367 (/Users/abhishek/Documents/USC/Projects/geospatial587/target/classes started by abhishek in /Users/abhishek/Documents/USC/Projects/geospatial587)
+2016-11-06 15:32:32 INFO  Application:661 - No active profile set, falling back to default profiles: default
+2016-11-06 15:32:32 INFO  AnnotationConfigEmbeddedWebApplicationContext:581 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:32:32 PST 2016]; root of context hierarchy
+2016-11-06 15:32:34 INFO  TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2016-11-06 15:32:34 INFO  ContextLoader:276 - Root WebApplicationContext: initialization completed in 2297 ms
+2016-11-06 15:32:35 INFO  ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-06 15:32:35 INFO  FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-06 15:32:35 INFO  FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-06 15:32:35 INFO  FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-06 15:32:35 INFO  FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-06 15:32:35 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:32:32 PST 2016]; root of context hierarchy
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.getAd(service.db.model.Location)
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/deletead],methods=[POST]}" onto public java.lang.String service.controllers.AdController.deleteAd(service.db.model.PersonAd)
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/clickad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.clickAd(service.db.model.Ad)
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/buildad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.buildAd(service.db.model.Ad)
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getads],methods=[GET]}" onto public java.lang.String service.controllers.AdController.getAllAds()
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/impressionad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.impressionAd(service.db.model.Ad)
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/]}" onto public java.lang.String service.controllers.DummyController.index()
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/post/{id}],methods=[POST]}" onto public java.lang.String service.controllers.DummyController.postCall(java.lang.String,java.lang.String)
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/postSupplier],methods=[POST],produces=[application/json]}" onto public java.lang.String service.controllers.DummyController.redire(org.json.JSONObject)
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/{ip}],methods=[GET]}" onto public java.lang.String service.controllers.DummyController.getCall(java.lang.String)
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/service]}" onto public java.lang.String service.controllers.DummyController.index1()
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersons],methods=[GET]}" onto public java.lang.String service.controllers.PersonController.getAllAds()
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/addperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.addPerson(service.db.model.Person)
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersonads],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getAllpersonAds(service.db.model.Person)
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-06 15:32:35 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-06 15:32:35 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:32:35 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:32:36 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:32:36 INFO  AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2016-11-06 15:32:36 INFO  TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2016-11-06 15:32:36 INFO  Application:57 - Started Application in 14.722 seconds (JVM running for 16.119)
+2016-11-06 15:32:36 INFO  Application:51 - Application online
+2016-11-06 15:48:48 INFO  AnnotationConfigEmbeddedWebApplicationContext:982 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:32:32 PST 2016]; root of context hierarchy
+2016-11-06 15:48:48 INFO  AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2016-11-06 15:49:08 INFO  Version:30 - HV000001: Hibernate Validator 5.2.4.Final
+2016-11-06 15:49:12 INFO  Application:48 - Starting Application on Abhisheks-MacBook-Air.local with PID 6030 (/Users/abhishek/Documents/USC/Projects/geospatial587/target/classes started by abhishek in /Users/abhishek/Documents/USC/Projects/geospatial587)
+2016-11-06 15:49:12 INFO  Application:661 - No active profile set, falling back to default profiles: default
+2016-11-06 15:49:13 INFO  AnnotationConfigEmbeddedWebApplicationContext:581 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:49:13 PST 2016]; root of context hierarchy
+2016-11-06 15:49:14 INFO  TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2016-11-06 15:49:15 INFO  ContextLoader:276 - Root WebApplicationContext: initialization completed in 2028 ms
+2016-11-06 15:49:15 INFO  ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-06 15:49:15 INFO  FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-06 15:49:15 INFO  FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-06 15:49:15 INFO  FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-06 15:49:15 INFO  FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-06 15:49:15 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:49:13 PST 2016]; root of context hierarchy
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/clickad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.clickAd(service.db.model.Ad)
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/deletead],methods=[POST]}" onto public java.lang.String service.controllers.AdController.deleteAd(service.db.model.PersonAd)
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.getAd(service.db.model.Location)
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/buildad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.buildAd(service.db.model.Ad)
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getads],methods=[GET]}" onto public java.lang.String service.controllers.AdController.getAllAds()
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/impressionad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.impressionAd(service.db.model.Ad)
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/]}" onto public java.lang.String service.controllers.DummyController.index()
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/post/{id}],methods=[POST]}" onto public java.lang.String service.controllers.DummyController.postCall(java.lang.String,java.lang.String)
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/postSupplier],methods=[POST],produces=[application/json]}" onto public java.lang.String service.controllers.DummyController.redire(org.json.JSONObject)
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/service]}" onto public java.lang.String service.controllers.DummyController.index1()
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/{ip}],methods=[GET]}" onto public java.lang.String service.controllers.DummyController.getCall(java.lang.String)
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/addperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.addPerson(service.db.model.Person)
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersons],methods=[GET]}" onto public java.lang.String service.controllers.PersonController.getAllPersons()
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getPerson(service.db.model.Person)
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersonads],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getAllpersonAds(service.db.model.Person)
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-06 15:49:15 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-06 15:49:16 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:49:16 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:49:16 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:49:16 INFO  AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2016-11-06 15:49:16 INFO  TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2016-11-06 15:49:16 INFO  Application:57 - Started Application in 14.45 seconds (JVM running for 15.844)
+2016-11-06 15:49:16 INFO  Application:51 - Application online
+2016-11-06 15:49:34 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-06 15:49:34 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 21 ms
+2016-11-06 15:49:34 INFO  PersonController:45 - Persons fetched
+2016-11-06 15:49:34 INFO  PersonController:47 - [{"city":"USA","name":"Karanjeet Singh Sarna","id":1,"age":21},{"city":"USA","name":"Abhishek Patro","id":2,"age":25},{"city":"USA","name":"Shiven Saiwal","id":3,"age":24},{"city":"Bangalore","name":"Sridhar","id":4,"age":24},{"city":"Bangalore","name":"karthik","id":5,"age":22},{"city":"USA","name":"Dummy Person","id":6,"age":23},{"city":"USA","name":"Sagar Narang","id":7,"age":23}]
+2016-11-06 15:49:50 INFO  PersonDao:108 - Cache hit for person name
+2016-11-06 15:49:50 INFO  PersonController:63 - Person fetched
+2016-11-06 15:49:50 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 15:49:52 INFO  PersonDao:108 - Cache hit for person name
+2016-11-06 15:49:52 INFO  PersonController:63 - Person fetched
+2016-11-06 15:49:52 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 15:50:03 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 15:50:03 INFO  PersonController:63 - Person fetched
+2016-11-06 15:50:03 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 15:53:08 INFO  PersonController:45 - Persons fetched
+2016-11-06 15:53:08 INFO  PersonController:47 - [{"city":"USA","name":"Karanjeet Singh Sarna","id":1,"age":21},{"city":"USA","name":"Abhishek Patro","id":2,"age":25},{"city":"USA","name":"Shiven Saiwal","id":3,"age":24},{"city":"Bangalore","name":"Sridhar","id":4,"age":24},{"city":"Bangalore","name":"karthik","id":5,"age":22},{"city":"USA","name":"Dummy Person","id":6,"age":23},{"city":"USA","name":"Sagar Narang","id":7,"age":23}]
+2016-11-06 15:56:26 INFO  AnnotationConfigEmbeddedWebApplicationContext:982 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:49:13 PST 2016]; root of context hierarchy
+2016-11-06 15:56:27 INFO  AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2016-11-06 15:56:45 INFO  Version:30 - HV000001: Hibernate Validator 5.2.4.Final
+2016-11-06 15:56:49 INFO  Application:48 - Starting Application on Abhisheks-MacBook-Air.local with PID 6317 (/Users/abhishek/Documents/USC/Projects/geospatial587/target/classes started by abhishek in /Users/abhishek/Documents/USC/Projects/geospatial587)
+2016-11-06 15:56:49 INFO  Application:661 - No active profile set, falling back to default profiles: default
+2016-11-06 15:56:49 INFO  AnnotationConfigEmbeddedWebApplicationContext:581 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:56:49 PST 2016]; root of context hierarchy
+2016-11-06 15:56:51 INFO  TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2016-11-06 15:56:52 INFO  ContextLoader:276 - Root WebApplicationContext: initialization completed in 2237 ms
+2016-11-06 15:56:52 INFO  ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-06 15:56:52 INFO  FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-06 15:56:52 INFO  FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-06 15:56:52 INFO  FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-06 15:56:52 INFO  FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-06 15:56:52 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:56:49 PST 2016]; root of context hierarchy
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/buildad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.buildAd(service.db.model.Ad)
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/clickad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.clickAd(service.db.model.Ad)
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/deletead],methods=[POST]}" onto public java.lang.String service.controllers.AdController.deleteAd(service.db.model.PersonAd)
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getads],methods=[GET]}" onto public java.lang.String service.controllers.AdController.getAllAds()
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/impressionad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.impressionAd(service.db.model.Ad)
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.getAd(service.db.model.Location)
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/]}" onto public java.lang.String service.controllers.DummyController.index()
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/post/{id}],methods=[POST]}" onto public java.lang.String service.controllers.DummyController.postCall(java.lang.String,java.lang.String)
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/postSupplier],methods=[POST],produces=[application/json]}" onto public java.lang.String service.controllers.DummyController.redire(org.json.JSONObject)
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/{ip}],methods=[GET]}" onto public java.lang.String service.controllers.DummyController.getCall(java.lang.String)
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/service]}" onto public java.lang.String service.controllers.DummyController.index1()
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/addperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.addPerson(service.db.model.Person)
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersons],methods=[GET]}" onto public java.lang.String service.controllers.PersonController.getAllPersons()
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getPerson(service.db.model.Person)
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersonads],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getAllpersonAds(service.db.model.Person)
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-06 15:56:53 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-06 15:56:53 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:56:53 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:56:53 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:56:53 INFO  AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2016-11-06 15:56:53 INFO  TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2016-11-06 15:56:53 INFO  Application:57 - Started Application in 14.7 seconds (JVM running for 16.112)
+2016-11-06 15:56:53 INFO  Application:51 - Application online
+2016-11-06 15:56:57 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-06 15:56:57 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
+2016-11-06 15:56:57 INFO  PersonController:45 - Persons fetched
+2016-11-06 15:56:57 INFO  PersonController:47 - [{"city":"USA","name":"Karanjeet Singh Sarna","id":1,"age":21},{"city":"USA","name":"Abhishek Patro","id":2,"age":25},{"city":"USA","name":"Shiven Saiwal","id":3,"age":24},{"city":"Bangalore","name":"Sridhar","id":4,"age":24},{"city":"Bangalore","name":"karthik","id":5,"age":22},{"city":"USA","name":"Dummy Person","id":6,"age":23},{"city":"USA","name":"Sagar Narang","id":7,"age":23}]
+2016-11-06 15:56:59 INFO  PersonController:45 - Persons fetched
+2016-11-06 15:56:59 INFO  PersonController:47 - [{"city":"USA","name":"Karanjeet Singh Sarna","id":1,"age":21},{"city":"USA","name":"Abhishek Patro","id":2,"age":25},{"city":"USA","name":"Shiven Saiwal","id":3,"age":24},{"city":"Bangalore","name":"Sridhar","id":4,"age":24},{"city":"Bangalore","name":"karthik","id":5,"age":22},{"city":"USA","name":"Dummy Person","id":6,"age":23},{"city":"USA","name":"Sagar Narang","id":7,"age":23}]
+2016-11-06 15:57:01 INFO  PersonController:45 - Persons fetched
+2016-11-06 15:57:01 INFO  PersonController:47 - [{"city":"USA","name":"Karanjeet Singh Sarna","id":1,"age":21},{"city":"USA","name":"Abhishek Patro","id":2,"age":25},{"city":"USA","name":"Shiven Saiwal","id":3,"age":24},{"city":"Bangalore","name":"Sridhar","id":4,"age":24},{"city":"Bangalore","name":"karthik","id":5,"age":22},{"city":"USA","name":"Dummy Person","id":6,"age":23},{"city":"USA","name":"Sagar Narang","id":7,"age":23}]
+2016-11-06 15:57:20 INFO  AdController:112 - Ad deleted
+2016-11-06 15:57:20 INFO  AdController:114 - {"adId":9,"personId":2,"id":9}
+2016-11-06 15:57:22 INFO  AdController:112 - Ad deleted
+2016-11-06 15:58:12 INFO  AdController:112 - Ad deleted
+2016-11-06 15:58:12 INFO  AnnotationConfigEmbeddedWebApplicationContext:982 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:56:49 PST 2016]; root of context hierarchy
+2016-11-06 15:58:12 INFO  AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2016-11-06 15:58:32 INFO  Version:30 - HV000001: Hibernate Validator 5.2.4.Final
+2016-11-06 15:58:37 INFO  Application:48 - Starting Application on Abhisheks-MacBook-Air.local with PID 6397 (/Users/abhishek/Documents/USC/Projects/geospatial587/target/classes started by abhishek in /Users/abhishek/Documents/USC/Projects/geospatial587)
+2016-11-06 15:58:37 INFO  Application:661 - No active profile set, falling back to default profiles: default
+2016-11-06 15:58:37 INFO  AnnotationConfigEmbeddedWebApplicationContext:581 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:58:37 PST 2016]; root of context hierarchy
+2016-11-06 15:58:40 INFO  TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2016-11-06 15:58:40 INFO  ContextLoader:276 - Root WebApplicationContext: initialization completed in 2920 ms
+2016-11-06 15:58:40 INFO  ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-06 15:58:40 INFO  FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-06 15:58:40 INFO  FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-06 15:58:40 INFO  FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-06 15:58:40 INFO  FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-06 15:58:41 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:58:37 PST 2016]; root of context hierarchy
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/clickad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.clickAd(service.db.model.Ad)
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.getAd(service.db.model.Location)
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/deletead],methods=[POST]}" onto public java.lang.String service.controllers.AdController.deleteAd(service.db.model.PersonAd)
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/buildad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.buildAd(service.db.model.Ad)
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getads],methods=[GET]}" onto public java.lang.String service.controllers.AdController.getAllAds()
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/impressionad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.impressionAd(service.db.model.Ad)
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/]}" onto public java.lang.String service.controllers.DummyController.index()
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/{ip}],methods=[GET]}" onto public java.lang.String service.controllers.DummyController.getCall(java.lang.String)
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/postSupplier],methods=[POST],produces=[application/json]}" onto public java.lang.String service.controllers.DummyController.redire(org.json.JSONObject)
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/post/{id}],methods=[POST]}" onto public java.lang.String service.controllers.DummyController.postCall(java.lang.String,java.lang.String)
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/service]}" onto public java.lang.String service.controllers.DummyController.index1()
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/addperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.addPerson(service.db.model.Person)
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersons],methods=[GET]}" onto public java.lang.String service.controllers.PersonController.getAllPersons()
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getPerson(service.db.model.Person)
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersonads],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getAllpersonAds(service.db.model.Person)
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-06 15:58:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-06 15:58:41 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:58:41 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:58:41 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:58:42 INFO  AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2016-11-06 15:58:42 INFO  TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2016-11-06 15:58:42 INFO  Application:57 - Started Application in 15.546 seconds (JVM running for 16.929)
+2016-11-06 15:58:42 INFO  Application:51 - Application online
+2016-11-06 15:59:29 INFO  AnnotationConfigEmbeddedWebApplicationContext:982 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:58:37 PST 2016]; root of context hierarchy
+2016-11-06 15:59:29 INFO  AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2016-11-06 15:59:47 INFO  Version:30 - HV000001: Hibernate Validator 5.2.4.Final
+2016-11-06 15:59:52 INFO  Application:48 - Starting Application on Abhisheks-MacBook-Air.local with PID 6443 (/Users/abhishek/Documents/USC/Projects/geospatial587/target/classes started by abhishek in /Users/abhishek/Documents/USC/Projects/geospatial587)
+2016-11-06 15:59:52 INFO  Application:661 - No active profile set, falling back to default profiles: default
+2016-11-06 15:59:52 INFO  AnnotationConfigEmbeddedWebApplicationContext:581 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:59:52 PST 2016]; root of context hierarchy
+2016-11-06 15:59:54 INFO  TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2016-11-06 15:59:54 INFO  ContextLoader:276 - Root WebApplicationContext: initialization completed in 2190 ms
+2016-11-06 15:59:55 INFO  ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-06 15:59:55 INFO  FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-06 15:59:55 INFO  FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-06 15:59:55 INFO  FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-06 15:59:55 INFO  FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-06 15:59:55 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:59:52 PST 2016]; root of context hierarchy
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/buildad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.buildAd(service.db.model.Ad)
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getads],methods=[GET]}" onto public java.lang.String service.controllers.AdController.getAllAds()
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/clickad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.clickAd(service.db.model.Ad)
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/impressionad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.impressionAd(service.db.model.Ad)
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.getAd(service.db.model.Location)
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/deletead],methods=[POST]}" onto public java.lang.String service.controllers.AdController.deleteAd(service.db.model.PersonAd)
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/]}" onto public java.lang.String service.controllers.DummyController.index()
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/{ip}],methods=[GET]}" onto public java.lang.String service.controllers.DummyController.getCall(java.lang.String)
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/postSupplier],methods=[POST],produces=[application/json]}" onto public java.lang.String service.controllers.DummyController.redire(org.json.JSONObject)
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/post/{id}],methods=[POST]}" onto public java.lang.String service.controllers.DummyController.postCall(java.lang.String,java.lang.String)
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/service]}" onto public java.lang.String service.controllers.DummyController.index1()
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersons],methods=[GET]}" onto public java.lang.String service.controllers.PersonController.getAllPersons()
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/addperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.addPerson(service.db.model.Person)
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getPerson(service.db.model.Person)
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersonads],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getAllpersonAds(service.db.model.Person)
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-06 15:59:55 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-06 15:59:55 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:59:55 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:59:55 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 15:59:56 INFO  AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2016-11-06 15:59:56 INFO  TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2016-11-06 15:59:56 INFO  Application:57 - Started Application in 14.413 seconds (JVM running for 15.535)
+2016-11-06 15:59:56 INFO  Application:53 - All users fetched
+2016-11-06 15:59:56 INFO  Application:56 - Application online
+2016-11-06 16:00:02 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-06 16:00:02 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2016-11-06 16:00:02 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:02 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:02 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:04 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:04 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:04 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:05 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:05 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:05 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:05 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:05 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:05 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:06 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:06 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:06 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:06 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:06 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:06 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:07 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:07 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:07 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:07 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:07 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:07 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:15 INFO  AnnotationConfigEmbeddedWebApplicationContext:982 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 15:59:52 PST 2016]; root of context hierarchy
+2016-11-06 16:00:15 INFO  AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2016-11-06 16:00:33 INFO  Version:30 - HV000001: Hibernate Validator 5.2.4.Final
+2016-11-06 16:00:38 INFO  Application:48 - Starting Application on Abhisheks-MacBook-Air.local with PID 6477 (/Users/abhishek/Documents/USC/Projects/geospatial587/target/classes started by abhishek in /Users/abhishek/Documents/USC/Projects/geospatial587)
+2016-11-06 16:00:38 INFO  Application:661 - No active profile set, falling back to default profiles: default
+2016-11-06 16:00:38 INFO  AnnotationConfigEmbeddedWebApplicationContext:581 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 16:00:38 PST 2016]; root of context hierarchy
+2016-11-06 16:00:40 INFO  TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2016-11-06 16:00:40 INFO  ContextLoader:276 - Root WebApplicationContext: initialization completed in 1982 ms
+2016-11-06 16:00:40 INFO  ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-06 16:00:40 INFO  FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-06 16:00:40 INFO  FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-06 16:00:40 INFO  FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-06 16:00:40 INFO  FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-06 16:00:41 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 16:00:38 PST 2016]; root of context hierarchy
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.getAd(service.db.model.Location)
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/buildad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.buildAd(service.db.model.Ad)
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getads],methods=[GET]}" onto public java.lang.String service.controllers.AdController.getAllAds()
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/deletead],methods=[POST]}" onto public java.lang.String service.controllers.AdController.deleteAd(service.db.model.PersonAd)
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/impressionad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.impressionAd(service.db.model.Ad)
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/clickad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.clickAd(service.db.model.Ad)
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/]}" onto public java.lang.String service.controllers.DummyController.index()
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/service]}" onto public java.lang.String service.controllers.DummyController.index1()
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/postSupplier],methods=[POST],produces=[application/json]}" onto public java.lang.String service.controllers.DummyController.redire(org.json.JSONObject)
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/{ip}],methods=[GET]}" onto public java.lang.String service.controllers.DummyController.getCall(java.lang.String)
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/post/{id}],methods=[POST]}" onto public java.lang.String service.controllers.DummyController.postCall(java.lang.String,java.lang.String)
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/addperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.addPerson(service.db.model.Person)
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersons],methods=[GET]}" onto public java.lang.String service.controllers.PersonController.getAllPersons()
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getPerson(service.db.model.Person)
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersonads],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getAllpersonAds(service.db.model.Person)
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-06 16:00:41 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-06 16:00:41 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 16:00:41 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 16:00:41 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 16:00:42 INFO  AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2016-11-06 16:00:42 INFO  TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2016-11-06 16:00:42 INFO  Application:57 - Started Application in 14.269 seconds (JVM running for 15.243)
+2016-11-06 16:00:42 INFO  Application:53 - All users fetched
+2016-11-06 16:00:42 INFO  Application:56 - Application online
+2016-11-06 16:00:45 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-06 16:00:45 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
+2016-11-06 16:00:45 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:45 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:46 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:46 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:46 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:47 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:47 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:47 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:47 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:47 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:47 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:48 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:48 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:48 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:48 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:48 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:48 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:50 INFO  PersonDao:72 - Cache hit for person id
+2016-11-06 16:00:50 INFO  PersonController:63 - Person fetched
+2016-11-06 16:00:50 INFO  PersonController:65 - [{"city":"USA","name":"Abhishek Patro","id":2,"age":25}]
+2016-11-06 16:00:54 INFO  AnnotationConfigEmbeddedWebApplicationContext:982 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 16:00:38 PST 2016]; root of context hierarchy
+2016-11-06 16:00:54 INFO  AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2016-11-06 16:01:14 INFO  Version:30 - HV000001: Hibernate Validator 5.2.4.Final
+2016-11-06 16:01:18 INFO  Application:48 - Starting Application on Abhisheks-MacBook-Air.local with PID 6507 (/Users/abhishek/Documents/USC/Projects/geospatial587/target/classes started by abhishek in /Users/abhishek/Documents/USC/Projects/geospatial587)
+2016-11-06 16:01:18 INFO  Application:661 - No active profile set, falling back to default profiles: default
+2016-11-06 16:01:18 INFO  AnnotationConfigEmbeddedWebApplicationContext:581 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 16:01:18 PST 2016]; root of context hierarchy
+2016-11-06 16:01:20 INFO  TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2016-11-06 16:01:20 INFO  ContextLoader:276 - Root WebApplicationContext: initialization completed in 2058 ms
+2016-11-06 16:01:20 INFO  ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-06 16:01:20 INFO  FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-06 16:01:20 INFO  FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-06 16:01:20 INFO  FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-06 16:01:20 INFO  FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-06 16:01:21 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 16:01:18 PST 2016]; root of context hierarchy
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/buildad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.buildAd(service.db.model.Ad)
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getads],methods=[GET]}" onto public java.lang.String service.controllers.AdController.getAllAds()
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/clickad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.clickAd(service.db.model.Ad)
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/impressionad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.impressionAd(service.db.model.Ad)
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.getAd(service.db.model.Location)
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/deletead],methods=[POST]}" onto public java.lang.String service.controllers.AdController.deleteAd(service.db.model.PersonAd)
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/]}" onto public java.lang.String service.controllers.DummyController.index()
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/{ip}],methods=[GET]}" onto public java.lang.String service.controllers.DummyController.getCall(java.lang.String)
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/service]}" onto public java.lang.String service.controllers.DummyController.index1()
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/postSupplier],methods=[POST],produces=[application/json]}" onto public java.lang.String service.controllers.DummyController.redire(org.json.JSONObject)
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/post/{id}],methods=[POST]}" onto public java.lang.String service.controllers.DummyController.postCall(java.lang.String,java.lang.String)
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersons],methods=[GET]}" onto public java.lang.String service.controllers.PersonController.getAllPersons()
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/addperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.addPerson(service.db.model.Person)
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getPerson(service.db.model.Person)
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersonads],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getAllpersonAds(service.db.model.Person)
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-06 16:01:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-06 16:01:21 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 16:01:21 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 16:01:21 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 16:01:22 INFO  AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2016-11-06 16:01:22 INFO  TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2016-11-06 16:01:22 INFO  Application:57 - Started Application in 14.673 seconds (JVM running for 15.991)
+2016-11-06 16:01:22 INFO  Application:53 - All users fetched
+2016-11-06 16:01:22 INFO  Application:56 - Application online
+2016-11-06 16:02:03 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-06 16:02:03 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
+2016-11-06 16:02:16 INFO  AdController:112 - Ad deleted
+2016-11-06 16:02:16 INFO  AdController:114 - {"adId":9,"personId":2,"id":0}
+2016-11-06 16:07:02 INFO  AnnotationConfigEmbeddedWebApplicationContext:982 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 16:01:18 PST 2016]; root of context hierarchy
+2016-11-06 16:07:02 INFO  AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2016-11-06 16:07:21 INFO  Version:30 - HV000001: Hibernate Validator 5.2.4.Final
+2016-11-06 16:07:26 INFO  Application:48 - Starting Application on Abhisheks-MacBook-Air.local with PID 6814 (/Users/abhishek/Documents/USC/Projects/geospatial587/target/classes started by abhishek in /Users/abhishek/Documents/USC/Projects/geospatial587)
+2016-11-06 16:07:26 INFO  Application:661 - No active profile set, falling back to default profiles: default
+2016-11-06 16:07:26 INFO  AnnotationConfigEmbeddedWebApplicationContext:581 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 16:07:26 PST 2016]; root of context hierarchy
+2016-11-06 16:07:27 INFO  TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2016-11-06 16:07:28 INFO  ContextLoader:276 - Root WebApplicationContext: initialization completed in 1957 ms
+2016-11-06 16:07:28 INFO  ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-06 16:07:28 INFO  FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-06 16:07:28 INFO  FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-06 16:07:28 INFO  FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-06 16:07:28 INFO  FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-06 16:07:28 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Sun Nov 06 16:07:26 PST 2016]; root of context hierarchy
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/deletead],methods=[POST]}" onto public java.lang.String service.controllers.AdController.deleteAd(service.db.model.PersonAd)
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.getAd(service.db.model.Location)
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/clickad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.clickAd(service.db.model.Ad)
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/buildad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.buildAd(service.db.model.Ad)
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getads],methods=[GET]}" onto public java.lang.String service.controllers.AdController.getAllAds()
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/impressionad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.impressionAd(service.db.model.Ad)
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/]}" onto public java.lang.String service.controllers.DummyController.index()
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/post/{id}],methods=[POST]}" onto public java.lang.String service.controllers.DummyController.postCall(java.lang.String,java.lang.String)
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/service]}" onto public java.lang.String service.controllers.DummyController.index1()
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/postSupplier],methods=[POST],produces=[application/json]}" onto public java.lang.String service.controllers.DummyController.redire(org.json.JSONObject)
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/{ip}],methods=[GET]}" onto public java.lang.String service.controllers.DummyController.getCall(java.lang.String)
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersons],methods=[GET]}" onto public java.lang.String service.controllers.PersonController.getAllPersons()
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/addperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.addPerson(service.db.model.Person)
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getPerson(service.db.model.Person)
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersonads],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getAllpersonAds(service.db.model.Person)
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-06 16:07:29 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-06 16:07:29 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 16:07:29 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 16:07:29 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-06 16:07:29 INFO  AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2016-11-06 16:07:29 INFO  TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2016-11-06 16:07:29 INFO  Application:57 - Started Application in 14.218 seconds (JVM running for 15.701)
+2016-11-06 16:07:31 INFO  Application:53 - All users fetched
+2016-11-06 16:07:31 INFO  Application:56 - Application online
+2016-11-06 16:07:44 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-06 16:07:45 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+2016-11-06 16:07:49 INFO  AdController:112 - Ad deleted
+2016-11-06 16:07:49 INFO  AdController:114 - [{"adId":9,"personId":2,"id":0}]

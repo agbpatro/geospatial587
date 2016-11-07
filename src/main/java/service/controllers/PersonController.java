@@ -1,12 +1,17 @@
 package service.controllers;
 
 import org.apache.log4j.Logger;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
 import service.db.impl.PersonDaoImpl;
 import service.db.model.Ad;
 import service.db.model.Person;
-
-import java.util.List;
 
 import static service.response.JsonResponse.JSONAd;
 import static service.response.JsonResponse.JSONPerson;
@@ -34,7 +39,7 @@ public class PersonController {
   @RequestMapping(value = "/getpersons",
       method = RequestMethod.GET)
   @ResponseBody
-  public String getAllAds() {
+  public String getAllPersons() {
     PersonDaoImpl ob = new PersonDaoImpl();
     List<Person> op = ob.getAllPersons();
     LOG.info("Persons fetched");
@@ -43,10 +48,28 @@ public class PersonController {
     return result;
   }
 
-  @RequestMapping(value = "/getpersonads",
-          method = RequestMethod.POST)
+
+  @RequestMapping(value = "/getperson",
+      method = RequestMethod.POST)
   @ResponseBody
-  public String  getAllpersonAds(@RequestBody Person person) {
+  public String getPerson(@RequestBody Person person) {
+    PersonDaoImpl ob = new PersonDaoImpl();
+    Person op;
+    if (person.getName() != null) {
+      op = ob.getPersonByName(person);
+    } else {
+      op = ob.getPersonById(person);
+    }
+    LOG.info("Person fetched");
+    String result = JSONPerson(op);
+    LOG.info(result);
+    return result;
+  }
+
+  @RequestMapping(value = "/getpersonads",
+      method = RequestMethod.POST)
+  @ResponseBody
+  public String getAllpersonAds(@RequestBody Person person) {
     PersonDaoImpl ob = new PersonDaoImpl();
     List<Ad> op = ob.getAllPersonAds(person);
     LOG.info("Person Ads fetched");

@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 import service.db.dao.PersonDao;
 import service.db.model.Ad;
@@ -23,10 +24,12 @@ import static service.response.ResultWrapper.getPerson;
 public class PersonDaoImpl implements PersonDao {
 
   final static Logger LOG = Logger.getLogger(PersonDao.class);
+  final static ConcurrentHashMap<Integer, Person> userCache1 = new ConcurrentHashMap<>();
+  final static ConcurrentHashMap<String, Person> userCache2 = new ConcurrentHashMap<>();
+
 
   @Override
   public Person insertPerson(Person model) {
-
     Person p = getPersonByName(model);
     if (p != null) {
       return p;
@@ -64,6 +67,11 @@ public class PersonDaoImpl implements PersonDao {
 
   @Override
   public Person getPersonById(Person model) {
+
+    if (userCache1.containsKey(model.getId())) {
+      LOG.info("Cache hit for person id");
+      return userCache1.get(model.getId());
+    }
     String sql = "Select * from Person where id = ?";
     Connection conn = getConnection();
     try {
@@ -74,7 +82,10 @@ public class PersonDaoImpl implements PersonDao {
       //int count = pstmt.executeUpdate();
       ResultSet rs = pstmt.executeQuery();
       if (rs.next()) {
-        return getPerson(rs);
+        Person temp = getPerson(rs);
+        userCache1.put(temp.getId(), temp);
+        userCache2.put(temp.getName(), temp);
+        return temp;
       }
     } catch (SQLException e) {
       LOG.error("Error getting person by id", e);
@@ -92,6 +103,11 @@ public class PersonDaoImpl implements PersonDao {
 
   @Override
   public Person getPersonByName(Person model) {
+
+    if (userCache2.containsKey(model.getName())) {
+      LOG.info("Cache hit for person name");
+      return userCache2.get(model.getName());
+    }
     String sql = "Select * from Person where name = ?";
     Connection conn = getConnection();
     try {
@@ -102,7 +118,10 @@ public class PersonDaoImpl implements PersonDao {
       //int count = pstmt.executeUpdate();
       ResultSet rs = pstmt.executeQuery();
       if (rs.next()) {
-        return getPerson(rs);
+        Person temp = getPerson(rs);
+        userCache1.put(temp.getId(), temp);
+        userCache2.put(temp.getName(), temp);
+        return temp;
       }
     } catch (SQLException e) {
       LOG.error("Error getting person by id", e);
@@ -131,6 +150,9 @@ public class PersonDaoImpl implements PersonDao {
       //int count = pstmt.executeUpdate();
       ResultSet rs = pstmt.executeQuery();
       while (rs.next()) {
+        Person temp = getPerson(rs);
+        userCache1.put(temp.getId(), temp);
+        userCache2.put(temp.getName(), temp);
         personList.add(getPerson(rs));
       }
     } catch (SQLException e) {

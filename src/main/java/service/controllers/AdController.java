@@ -19,6 +19,7 @@ import service.db.model.PersonAd;
 import static service.db.impl.AdDaoImpl.CLICK;
 import static service.db.impl.AdDaoImpl.IMPRESSION;
 import static service.response.JsonResponse.JSONAd;
+import static service.response.JsonResponse.JSONPersonAd;
 
 /**
  * Created by patro on 9/24/16.
@@ -100,6 +101,20 @@ public class AdController {
     LOG.info(result);
     return result;
   }
+
+
+  @RequestMapping(value = "/deletead",
+      method = RequestMethod.POST)
+  @ResponseBody
+  public String deleteAd(@RequestBody PersonAd personAd) {
+    PersonAdDaoImpl ob1 = new PersonAdDaoImpl();
+    PersonAd op = ob1.deleteAdPerson(personAd);
+    LOG.info("Ad deleted");
+    String result = JSONPersonAd(op);
+    LOG.info(result);
+    return result;
+  }
+
 
 
 }

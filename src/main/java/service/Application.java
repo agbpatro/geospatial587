@@ -8,6 +8,8 @@ import org.springframework.context.ApplicationContext;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import service.db.impl.PersonDaoImpl;
+
 @SpringBootApplication
 public class Application {
 
@@ -46,6 +48,9 @@ public class Application {
     conn = getConnection();
     if (conn != null) {
       ApplicationContext ctx = SpringApplication.run(Application.class, args);
+      PersonDaoImpl ob = new PersonDaoImpl();
+      ob.getAllPersons();
+      LOG.info("All users fetched");
     }
     LOG.debug("Let's inspect the beans provided by Spring Boot:");
     LOG.info("Application online");
