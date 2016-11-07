@@ -1,4 +1,4 @@
-#Add user
+# 1 Add user
 `curl -X POST -H "Content-Type: application/json"  -d '{     "name" : "Abhishek Patro",     "city" : "USA",     "age" : 25 }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/addperson"`
  
 #Response
@@ -15,7 +15,7 @@
 
 
 
-#Build Ad
+# 2 Build Ad
 `curl -X POST -H "Content-Type: application/json" -d '{    "name" : "Club Havana",    "country" : "USA",    "budget" : 10000,    "personId" : 2,    "type" : "video",    "videourl" : "https://www.youtube.com/watch?v=w7IWLZcVU64",    "clickurl" : "https://en.wikipedia.org/wiki/Casablanca_(film)",    "fence": "((0,0),(0,10),(10, 10),(0, 0))"}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/buildad"`
 
 #Response
@@ -40,7 +40,7 @@
 ]
 ```
 
-#Get All Ads
+# 3 Get All Ads
 `curl -X GET -H "Content-Type: application/json" "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/getads"`
 
 #Response
@@ -126,7 +126,7 @@
 ```
 
 
-#Increase Click Count
+# 4 Increase Click Count
 `curl -X POST -H "Content-Type: application/json"  -d '{    "id" : 5    }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/clickad"`
 
 #Response
@@ -153,7 +153,7 @@
 
 
 
-#Increase Impression Count
+# 5 Increase Impression Count
 `curl -X POST -H "Content-Type: application/json"  -d '{    "id" : 5    }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/impressionad"`
 
 #Response
@@ -178,7 +178,7 @@
 ]
 ```
 
-#Get single Ad based on location (based on budget,fence,etc parameters)
+# 6 Get single Ad based on location (based on budget,fence,etc parameters)
 `curl -X POST -H "Content-Type: application/json" -d '{    "location" : "(2, 8)"}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/getad"`
 
 #Response
@@ -205,7 +205,7 @@
 
 
 
-#Get Ads for a particular users
+# 7 Get Ads for a particular users
 `curl -X POST -H "Content-Type: application/json" -d '{ "name" : "Abhishek Patro" }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/getpersonads"`
 #Response
 ```json
@@ -294,7 +294,7 @@
 ```
 
 
-#Get all persons
+# 8 Get all persons
 `curl -X GET -H "Content-Type: application/json" "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/getpersons"`
 
 
@@ -341,7 +341,7 @@
 ```
 
 
-#Get person by name/id
+# 9 Get person by name/id
 
 `curl -X POST -H "Content-Type: application/json"  -d '{   "name" : "Abhishek Patro" }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/getperson"`
 
@@ -358,7 +358,7 @@
 ]
 ```
 
-#Delete an ad by user
+# 10 Delete an ad by user
 `curl -X POST -H "Content-Type: application/json" -d '{    "personId" : 2,    "adId" : 9}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/deletead"`
 #Response
 ```json
