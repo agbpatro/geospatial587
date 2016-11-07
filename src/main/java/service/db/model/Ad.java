@@ -122,6 +122,9 @@ public class Ad implements Serializable {
   }
 
   public String getType() {
+    if (type == null) {
+      return "None";
+    }
     return type;
   }
 

@@ -213,8 +213,10 @@ public class AdDaoImpl implements AdDao {
       while (rs.next()) {
         adList.add(getAd(rs));
       }
-      Ad selectedAd = adList.get(rn.nextInt(adList.size()));
-      return clickAd(selectedAd, IMPRESSION);
+      if (adList.size() > 0) {
+        Ad selectedAd = adList.get(rn.nextInt(adList.size()));
+        return clickAd(selectedAd, IMPRESSION);
+      }
     } catch (SQLException e) {
       LOG.error("Error getting ad by name", e);
     } finally {
@@ -226,7 +228,8 @@ public class AdDaoImpl implements AdDao {
         }
       }
     }
-    return null;
+
+    return new Ad();
   }
 
   @Override

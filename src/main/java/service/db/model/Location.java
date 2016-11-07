@@ -21,7 +21,12 @@ public class Location implements Serializable {
 
   public void setLocation(String location) {
     try {
-      this.location = new PGpoint(location);
+      if (location != null || location.length() > 0) {
+        location = location.replaceAll(" ", "");
+        this.location = new PGpoint(location);
+      } else {
+        this.location = new PGpoint();
+      }
     } catch (SQLException e) {
       LOG.error("Error building location", e);
     }
