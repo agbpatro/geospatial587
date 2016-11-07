@@ -138,7 +138,7 @@ public class Ad implements Serializable {
 
   public void setFence(String fence) {
     try {
-      if (fence != null || fence.length() > 0) {
+      if (fence != null && fence.length() > 0) {
         fence = fence.replaceAll(" ", "");
         this.fence = new PGpolygon(fence);
       } else {
