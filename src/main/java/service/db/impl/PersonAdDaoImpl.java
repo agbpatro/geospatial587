@@ -26,7 +26,7 @@ public class PersonAdDaoImpl implements PersonAdDao {
   @Override
   public PersonAd linkAdPerson(Ad source, Person dest) {
     PersonAd pa = getPersonAdMap(source, dest);
-    if (pa != null && pa.getAdId() == source.getId() && pa.getPersonId() == dest.getId() ) {
+    if (pa != null && pa.getAdId() == source.getId() && pa.getPersonId() == dest.getId()) {
       return pa;
     }
     String sql =
@@ -89,7 +89,11 @@ public class PersonAdDaoImpl implements PersonAdDao {
   }
 
   @Override
-  public PersonAd deleteAdPerson(Ad source, Person dest) {
+  public PersonAd deleteAdPerson(PersonAd personAd) {
+    Ad source = new Ad();
+    Person dest = new Person();
+    source.setId(personAd.getAdId());
+    dest.setId(personAd.getPersonId());
     String sql =
         "Delete from PERSONAD where adId = ?  and personId = ? Returning *";
     Connection conn = getConnection();
@@ -113,7 +117,7 @@ public class PersonAdDaoImpl implements PersonAdDao {
         }
       }
     }
-    return null;
+    return personAd;
 
   }
 
