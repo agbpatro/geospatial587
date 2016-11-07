@@ -135,7 +135,12 @@ public class Ad implements Serializable {
 
   public void setFence(String fence) {
     try {
-      this.fence = new PGpolygon(fence);
+      if (fence != null || fence.length() > 0) {
+        fence = fence.replaceAll(" ", "");
+        this.fence = new PGpolygon(fence);
+      } else {
+        this.fence = new PGpolygon();
+      }
     } catch (SQLException e) {
       LOG.error("Error building polygon", e);
     }
