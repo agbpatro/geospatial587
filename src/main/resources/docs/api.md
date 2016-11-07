@@ -292,3 +292,81 @@
   }
 ]
 ```
+
+
+#Get all persons
+`curl -X GET -H "Content-Type: application/json" "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/getpersons"`
+
+
+#Response
+```json
+[
+  {
+    "city": "USA",
+    "name": "Karanjeet Singh Sarna",
+    "id": 1,
+    "age": 21
+  },
+  {
+    "city": "USA",
+    "name": "Abhishek Patro",
+    "id": 2,
+    "age": 25
+  },
+  {
+    "city": "USA",
+    "name": "Shiven Saiwal",
+    "id": 3,
+    "age": 24
+  },
+  {
+    "city": "Bangalore",
+    "name": "Sridhar",
+    "id": 4,
+    "age": 24
+  },
+  {
+    "city": "Bangalore",
+    "name": "karthik",
+    "id": 5,
+    "age": 22
+  },
+  {
+    "city": "USA",
+    "name": "Sagar Narang",
+    "id": 7,
+    "age": 23
+  }
+]
+```
+
+
+#Get person by name/id
+
+`curl -X POST -H "Content-Type: application/json"  -d '{   "name" : "Abhishek Patro" }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/getperson"`
+
+`curl -X POST -H "Content-Type: application/json"  -d '{   "id" : 2 }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/getperson"`
+#Response
+```json
+[
+  {
+    "city": "USA",
+    "name": "Abhishek Patro",
+    "id": 2,
+    "age": 25
+  }
+]
+```
+
+#Delete an ad by user
+`curl -X POST -H "Content-Type: application/json" -d '{    "personId" : 2,    "adId" : 9}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/deletead"`
+#Response
+```json
+[
+  {
+    "adId": 9,
+    "personId": 2,
+    "id": 0
+  }
+]
+```

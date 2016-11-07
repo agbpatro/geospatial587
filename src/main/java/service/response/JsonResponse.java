@@ -123,16 +123,26 @@ public class JsonResponse {
 
 
   public static String JSONPersonAd(PersonAd personAd) {
-    JSONObject obj = new JSONObject();
+    ArrayList<PersonAd> temp = new ArrayList<>();
+    temp.add(personAd);
+    return JSONPersonAd(temp);
+  }
 
+  public static String JSONPersonAd(List<PersonAd> personAds) {
+    JSONArray responseArray = new JSONArray();
     try {
-      obj.put("id", personAd.getId());
-      obj.put("personId", personAd.getPersonId());
-      obj.put("adId", personAd.getAdId());
-      return obj.toString();
-
+      for (PersonAd personAd : personAds) {
+        if (personAd != null) {
+          JSONObject obj = new JSONObject();
+          obj.put("id", personAd.getId());
+          obj.put("personId", personAd.getPersonId());
+          obj.put("adId", personAd.getAdId());
+          responseArray.put(obj);
+        }
+      }
+      return responseArray.toString();
     } catch (JSONException e) {
-      LOG.error("Error parsing person ad mapping object", e);
+      LOG.error("Error parsing person ad object", e);
       return "";
     }
   }
