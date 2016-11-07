@@ -97,14 +97,14 @@ public class PersonAdDaoImpl implements PersonAdDao {
     String sql =
         "Delete from PERSONAD where adId = ?  and personId = ? Returning *";
     Connection conn = getConnection();
-
+    PersonAd op = personAd;
     try {
       PreparedStatement pstmt = conn.prepareStatement(sql);
       pstmt.setInt(1, source.getId());
       pstmt.setInt(2, dest.getId());
       ResultSet rs = pstmt.executeQuery();
       if (rs.next()) {
-        return getPersonAd(rs);
+        op = getPersonAd(rs);
       }
     } catch (SQLException e) {
       LOG.error("Error deleting person-ad", e);
@@ -117,7 +117,9 @@ public class PersonAdDaoImpl implements PersonAdDao {
         }
       }
     }
-    return personAd;
+    AdDaoImpl ob = new AdDaoImpl();
+    ob.deleteAd(source);
+    return op;
 
   }
 

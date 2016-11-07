@@ -74,6 +74,38 @@ public class AdDaoImpl implements AdDao {
 
 
   @Override
+  public Ad deleteAd(Ad model) {
+    String
+        sql = "Delete from AD where id = ?  Returning *";
+    Connection conn = getConnection();
+
+    try {
+      //conn = dataSource.getConnection();
+      //conn = getConnection();
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      pstmt.setInt(1, model.getId());
+      //int count = pstmt.executeUpdate();
+      ResultSet rs = pstmt.executeQuery();
+      if (rs.next()) {
+        return getAd(rs);
+      }
+    } catch (SQLException e) {
+      LOG.error("Error deleting ad", e);
+    } finally {
+      if (conn == null) {
+        try {
+          conn.close();
+        } catch (SQLException e) {
+          LOG.error("Error closing connection", e);
+        }
+      }
+    }
+    return model;
+
+  }
+
+
+  @Override
   public Ad clickAd(Ad model, String type) {
     String sql;
     if (type.equals(CLICK)) {
