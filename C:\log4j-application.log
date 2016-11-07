@@ -3304,3 +3304,7 @@ org.postgresql.util.PSQLException: The column name id was not found in this Resu
 2016-11-06 16:01:22 INFO  Application:57 - Started Application in 14.673 seconds (JVM running for 15.991)
 2016-11-06 16:01:22 INFO  Application:53 - All users fetched
 2016-11-06 16:01:22 INFO  Application:56 - Application online
+2016-11-06 16:02:03 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-06 16:02:03 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
+2016-11-06 16:02:16 INFO  AdController:112 - Ad deleted
+2016-11-06 16:02:16 INFO  AdController:114 - {"adId":9,"personId":2,"id":0}
