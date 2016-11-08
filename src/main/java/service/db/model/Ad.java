@@ -41,6 +41,8 @@ public class Ad implements Serializable {
 
   String clickurl;
 
+  float xAttribute;
+
   public int getId() {
     return id;
   }
@@ -156,4 +158,13 @@ public class Ad implements Serializable {
   public void setClickurl(String clickurl) {
     this.clickurl = clickurl;
   }
+
+  public float getxAttribute() {
+    return xAttribute;
+  }
+
+  public void setxAttribute(float xAttribute) {
+    this.xAttribute = xAttribute;
+  }
+
 }

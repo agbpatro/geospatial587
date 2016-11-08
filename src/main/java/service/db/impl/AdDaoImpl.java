@@ -28,6 +28,7 @@ public class AdDaoImpl implements AdDao {
 
   @Override
   public Ad insertAd(Ad model) {
+
     model.setAmountLeft(model.getBudget());
     Ad a = getAdByName(model);
     if (a != null) {
@@ -35,7 +36,7 @@ public class AdDaoImpl implements AdDao {
     }
     String
         sql =
-        "INSERT INTO AD (NAME, COUNTRY, CLICKCOUNT, BUDGET, AMOUNTLEFT, TYPE, VIDEOURL, FENCE, CLICKURL) VALUES (?,?,?,?,?,?,?,?,?) Returning *";
+        "INSERT INTO AD (NAME, COUNTRY, CLICKCOUNT, BUDGET, AMOUNTLEFT, TYPE, VIDEOURL, FENCE, CLICKURL, XATTRIBUTE) VALUES (?,?,?,?,?,?,?,?,?,area(path(?))) Returning *";
     Connection conn = getConnection();
 
     try {
@@ -51,6 +52,7 @@ public class AdDaoImpl implements AdDao {
       pstmt.setString(7, model.getVideourl());
       pstmt.setObject(8, model.getFence());
       pstmt.setObject(9, model.getClickurl());
+      pstmt.setObject(10, model.getFence());
       //int count = pstmt.executeUpdate();
       ResultSet rs = pstmt.executeQuery();
 

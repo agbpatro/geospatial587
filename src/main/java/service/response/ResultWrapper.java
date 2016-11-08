@@ -30,6 +30,7 @@ public class ResultWrapper {
     ad.setClickurl(rs.getString("clickurl"));
     ad.setAmountLeft(rs.getFloat("amountLeft"));
     ad.setFence(rs.getString("fence"));
+    ad.setxAttribute(rs.getFloat("xattribute"));
     return ad;
   }
 

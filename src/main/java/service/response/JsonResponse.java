@@ -83,6 +83,7 @@ public class JsonResponse {
           obj.put("amountLeft", ad.getAmountLeft());
           obj.put("clickCount", ad.getClickCount());
           obj.put("fence", ad.getFence());
+          obj.put("xAttribute", ad.getxAttribute());
           if (ad.getImpressions() != 0) {
             obj.put("ctr", (ad.getClickCount() * 100.0) / (1.0 * (ad.getImpressions() + ad.getClickCount())));
           } else {
