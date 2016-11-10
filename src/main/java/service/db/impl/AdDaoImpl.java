@@ -233,6 +233,7 @@ public class AdDaoImpl implements AdDao {
       }
     }
     if (dominantAdList.size() > 0) {
+      LOG.info("Size of dominated ads : + dominantAdList.size()");
       dominantAd = dominantAdList.get(rn.nextInt(dominantAdList.size()));
     }
     return dominantAd;
