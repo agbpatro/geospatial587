@@ -216,8 +216,8 @@ public class AdDaoImpl implements AdDao {
       for (Ad elt : adList) {
         if (candidate.getId() != elt.getId()) {
           float eltY = 1.0f / (elt.getAmountLeft() + 1.0f);
-          boolean condY = candidateY > eltY;
-          boolean condX = candidate.getxAttribute() > elt.getxAttribute();
+          boolean condY = candidateY >= eltY;
+          boolean condX = candidate.getxAttribute() >= elt.getxAttribute();
           if (condY && condX) {
             //if (!((candidateY >= eltY) && (candidate.getxAttribute() >= elt.getxAttribute()))) {
             dominant = false;
