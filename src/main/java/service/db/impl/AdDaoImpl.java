@@ -7,13 +7,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
 import service.db.dao.AdDao;
 import service.db.model.Ad;
 import service.db.model.Location;
-import java.util.Iterator;
 
 import static service.Application.getConnection;
 import static service.response.ResultWrapper.getAd;
@@ -203,33 +203,36 @@ public class AdDaoImpl implements AdDao {
   }
 
 
-  private Ad skylinePick(List<Ad> adList){
-      int length = adList.size();
-      Iterator<Ad> adIterator = adList.iterator();
-      List<Ad> dominantAdList = new ArrayList<>();
-      Random rn = new Random();
-      Ad dominantAd = adList.get(rn.nextInt(adList.size()));
-      while(adIterator.hasNext()){
-          boolean dominant = true;
-          Ad candidate = adIterator.next();
-          for(int i = 0; i < length; i++){
-
-            if (candidate.getId() != adList.get(i).getId()) {
-              if (!((candidate.getAmountLeft() >= adList.get(i).getAmountLeft()) && (candidate.getxAttribute() >= adList
-                  .get(i).getxAttribute()))) {
-                dominant = false;
-                break;
-              }
-            }
+  private Ad skylinePick(List<Ad> adList) {
+    int length = adList.size();
+    Iterator<Ad> adIterator = adList.iterator();
+    List<Ad> dominantAdList = new ArrayList<>();
+    Random rn = new Random();
+    Ad dominantAd = adList.get(rn.nextInt(adList.size()));
+    while (adIterator.hasNext()) {
+      boolean dominant = true;
+      Ad candidate = adIterator.next();
+      float candidateY = 1.0f / (candidate.getAmountLeft() + 1.0f);
+      for (Ad elt : adList) {
+        if (candidate.getId() != elt.getId()) {
+          float eltY = 1.0f / (elt.getAmountLeft() + 1.0f);
+          boolean condY = candidateY > eltY;
+          boolean condX = candidate.getxAttribute() > elt.getxAttribute();
+          if (condY && condX) {
+            //if (!((candidateY >= eltY) && (candidate.getxAttribute() >= elt.getxAttribute()))) {
+            dominant = false;
+            break;
           }
-          if(dominant){
-              dominantAdList.add(candidate);
-          }
+        }
       }
-      if (dominantAdList.size() > 0) {
-        dominantAd = dominantAdList.get(rn.nextInt(dominantAdList.size()));
+      if (dominant) {
+        dominantAdList.add(candidate);
       }
-      return dominantAd;
+    }
+    if (dominantAdList.size() > 0) {
+      dominantAd = dominantAdList.get(rn.nextInt(dominantAdList.size()));
+    }
+    return dominantAd;
   }
 
   @Override

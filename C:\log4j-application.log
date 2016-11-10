@@ -326,3 +326,48 @@
 2016-11-09 16:33:40 INFO  AdController:101 - [{"clickurl":"https://www.warnerbros.co.uk/franchises/harry-potter","ctr":0,"country":"USA","xAttribute":5.126340693095699E-5,"imageId":26,"clickCount":0,"impressions":35,"type":"video","amountLeft":19965,"videourl":"https://www.youtube.com/watch?v=2x6eYEKTQLY","name":"Harry Potter","personId":0,"id":30,"fence":"((-118.2915974,34.0183228),(-118.2915974,34.0183228),(-118.2823277,34.0184295),(-118.2800317,34.0219687),(-118.2881641,34.0254544),(-118.2915974,34.0183228))","budget":20000}]
 2016-11-09 16:33:41 INFO  AdController:99 - Ad fetched by location
 2016-11-09 16:33:41 INFO  AdController:101 - [{"clickurl":"https://www.warnerbros.co.uk/franchises/harry-potter","ctr":0,"country":"USA","xAttribute":5.126340693095699E-5,"imageId":26,"clickCount":0,"impressions":36,"type":"video","amountLeft":19964,"videourl":"https://www.youtube.com/watch?v=2x6eYEKTQLY","name":"Harry Potter","personId":0,"id":30,"fence":"((-118.2915974,34.0183228),(-118.2915974,34.0183228),(-118.2823277,34.0184295),(-118.2800317,34.0219687),(-118.2881641,34.0254544),(-118.2915974,34.0183228))","budget":20000}]
+2016-11-09 16:37:28 INFO  AnnotationConfigEmbeddedWebApplicationContext:982 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Wed Nov 09 16:31:29 PST 2016]; root of context hierarchy
+2016-11-09 16:37:28 INFO  AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2016-11-09 21:37:09 INFO  Version:30 - HV000001: Hibernate Validator 5.2.4.Final
+2016-11-09 21:37:13 INFO  Application:48 - Starting Application on Abhisheks-MacBook-Air.local with PID 6992 (/Users/abhishek/Documents/USC/Projects/geospatial587/target/classes started by abhishek in /Users/abhishek/Documents/USC/Projects/geospatial587)
+2016-11-09 21:37:13 INFO  Application:661 - No active profile set, falling back to default profiles: default
+2016-11-09 21:37:13 INFO  AnnotationConfigEmbeddedWebApplicationContext:581 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Wed Nov 09 21:37:13 PST 2016]; root of context hierarchy
+2016-11-09 21:37:16 INFO  TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2016-11-09 21:37:16 INFO  ContextLoader:276 - Root WebApplicationContext: initialization completed in 2504 ms
+2016-11-09 21:37:16 INFO  ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2016-11-09 21:37:16 INFO  FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-11-09 21:37:16 INFO  FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-11-09 21:37:16 INFO  FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2016-11-09 21:37:16 INFO  FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2016-11-09 21:37:17 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@651aed93: startup date [Wed Nov 09 21:37:13 PST 2016]; root of context hierarchy
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.getAd(service.db.model.Location)
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/clickad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.clickAd(service.db.model.Ad)
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/deletead],methods=[POST]}" onto public java.lang.String service.controllers.AdController.deleteAd(service.db.model.PersonAd)
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/buildad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.buildAd(service.db.model.Ad)
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/getads],methods=[GET]}" onto public java.lang.String service.controllers.AdController.getAllAds()
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/ad/impressionad],methods=[POST]}" onto public java.lang.String service.controllers.AdController.impressionAd(service.db.model.Ad)
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/]}" onto public java.lang.String service.controllers.DummyController.index()
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/service]}" onto public java.lang.String service.controllers.DummyController.index1()
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/{ip}],methods=[GET]}" onto public java.lang.String service.controllers.DummyController.getCall(java.lang.String)
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/postSupplier],methods=[POST],produces=[application/json]}" onto public java.lang.String service.controllers.DummyController.redire(org.json.JSONObject)
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/dummy/post/{id}],methods=[POST]}" onto public java.lang.String service.controllers.DummyController.postCall(java.lang.String,java.lang.String)
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersons],methods=[GET]}" onto public java.lang.String service.controllers.PersonController.getAllPersons()
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/addperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.addPerson(service.db.model.Person)
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getperson],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getPerson(service.db.model.Person)
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/v1/person/getpersonads],methods=[POST]}" onto public java.lang.String service.controllers.PersonController.getAllpersonAds(service.db.model.Person)
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-11-09 21:37:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-11-09 21:37:17 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-09 21:37:17 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-09 21:37:17 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-11-09 21:37:18 INFO  AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2016-11-09 21:37:18 INFO  TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2016-11-09 21:37:18 INFO  Application:57 - Started Application in 15.205 seconds (JVM running for 17.023)
+2016-11-09 21:37:18 INFO  Application:53 - All users fetched
+2016-11-09 21:37:18 INFO  Application:56 - Application online
+2016-11-09 21:37:57 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-09 21:37:57 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 34 ms
+2016-11-09 21:37:57 INFO  AdController:99 - Ad fetched by location
+2016-11-09 21:37:57 INFO  AdController:101 - [{"clickurl":"http://www.stubhub.com/usc-football-tickets/performer/6342/","ctr":63.63636363636363,"country":"USA","xAttribute":5.126340693095699E-5,"imageId":27,"clickCount":14,"impressions":8,"type":"video","amountLeft":11964,"videourl":"https://www.youtube.com/watch?v=UMxCZ_FOBOg","name":"USC Homecoming","personId":0,"id":31,"fence":"((-118.2915974,34.0183228),(-118.2915974,34.0183228),(-118.2823277,34.0184295),(-118.2800317,34.0219687),(-118.2881641,34.0254544),(-118.2915974,34.0183228))","budget":12000}]
+2016-11-09 21:42:18 INFO  AdController:99 - Ad fetched by location
+2016-11-09 21:42:18 INFO  AdController:101 - [{"clickurl":"https://www.easports.com/fifa/the-journey","ctr":0,"country":"USA","xAttribute":5.126340693095699E-5,"imageId":31,"clickCount":0,"impressions":1,"type":"video","amountLeft":7999,"videourl":"https://www.youtube.com/watch?v=P9LHzVEPodg","name":"FIFA 17","personId":0,"id":35,"fence":"((-118.2915974,34.0183228),(-118.2915974,34.0183228),(-118.2823277,34.0184295),(-118.2800317,34.0219687),(-118.2881641,34.0254544),(-118.2915974,34.0183228))","budget":8000}]
