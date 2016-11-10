@@ -213,10 +213,14 @@ public class AdDaoImpl implements AdDao {
           boolean dominant = true;
           Ad candidate = adIterator.next();
           for(int i = 0; i < length; i++){
-              if(!((candidate.getAmountLeft() >= adList.get(i).getAmountLeft()) && (candidate.getxAttribute() >= adList.get(i).getxAttribute()))){
-                  dominant = false;
-                  break;
+
+            if (candidate.getId() != adList.get(i).getId()) {
+              if (!((candidate.getAmountLeft() >= adList.get(i).getAmountLeft()) && (candidate.getxAttribute() >= adList
+                  .get(i).getxAttribute()))) {
+                dominant = false;
+                break;
               }
+            }
           }
           if(dominant){
               dominantAdList.add(candidate);
