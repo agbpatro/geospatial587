@@ -179,7 +179,9 @@
 ```
 
 # 6 Get single Ad based on location (based on budget,fence,etc parameters)
-`curl -X POST -H "Content-Type: application/json" -d '{    "location" : "(2, 8)"}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/getad"`
+`curl -X POST -H "Content-Type: application/json" -d '{    "location" : "(2, 8),"type" : "random"}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/getad"`
+`curl -X POST -H "Content-Type: application/json" -d '{    "location" : "(2, 8),"type" : "nn"}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/getad"`
+`curl -X POST -H "Content-Type: application/json" -d '{    "location" : "(2, 8),"type" : "skyline"}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/getad"`
 
 #Response
 ```json
