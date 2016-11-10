@@ -13,6 +13,7 @@ import java.util.Random;
 import service.db.dao.AdDao;
 import service.db.model.Ad;
 import service.db.model.Location;
+import java.util.Iterator;
 
 import static service.Application.getConnection;
 import static service.response.ResultWrapper.getAd;
@@ -201,12 +202,37 @@ public class AdDaoImpl implements AdDao {
     return null;
   }
 
+
+  private Ad skylinePick(List<Ad> adList){
+      int length = adList.size();
+      Iterator<Ad> adIterator = adList.iterator();
+      List<Ad> dominantAdList = new ArrayList<>();
+      Random rn = new Random();
+      Ad dominantAd = adList.get(rn.nextInt(adList.size()));
+      while(adIterator.hasNext()){
+          boolean dominant = true;
+          Ad candidate = adIterator.next();
+          for(int i = 0; i < length; i++){
+              if(!((candidate.getAmountLeft() >= adList.get(i).getAmountLeft()) && (candidate.getxAttribute() >= adList.get(i).getxAttribute()))){
+                  dominant = false;
+                  break;
+              }
+          }
+          if(dominant){
+              dominantAdList.add(candidate);
+          }
+      }
+      if (dominantAdList.size() > 0) {
+        dominantAd = dominantAdList.get(rn.nextInt(dominantAdList.size()));
+      }
+      return dominantAd;
+  }
+
   @Override
   public Ad getAdByLocation(Location model) {
     String sql = "select * from AD where fence @> ? and amountLeft > 0";
     Connection conn = getConnection();
     List<Ad> adList = new ArrayList<>();
-    Random rn = new Random();
 
     try {
       PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -216,7 +242,9 @@ public class AdDaoImpl implements AdDao {
         adList.add(getAd(rs));
       }
       if (adList.size() > 0) {
-        Ad selectedAd = adList.get(rn.nextInt(adList.size()));
+        // Random rn = new Random();
+        // Ad selectedAd = adList.get(rn.nextInt(adList.size()));
+        Ad selectedAd = skylinePick(adList);
         return clickAd(selectedAd, IMPRESSION);
       }
     } catch (SQLException e) {
