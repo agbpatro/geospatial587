@@ -16,6 +16,9 @@ import service.db.model.Ad;
 import service.db.model.Location;
 
 import static service.Application.getConnection;
+import static service.db.model.Location.NN;
+import static service.db.model.Location.RANDOM;
+import static service.db.model.Location.SKYLINE;
 import static service.response.ResultWrapper.getAd;
 
 /**
@@ -203,12 +206,15 @@ public class AdDaoImpl implements AdDao {
   }
 
 
-  private Ad skylinePick(List<Ad> adList) {
-    int length = adList.size();
+  private Ad getRandomAd(List<Ad> adList) {
+    Random rn = new Random();
+    return adList.get(rn.nextInt(adList.size()));
+  }
+
+  private Ad skylinePick(List<Ad> adList, Ad randomAd) {
     Iterator<Ad> adIterator = adList.iterator();
     List<Ad> dominantAdList = new ArrayList<>();
-    Random rn = new Random();
-    Ad dominantAd = adList.get(rn.nextInt(adList.size()));
+    Ad dominantAd = randomAd;
     while (adIterator.hasNext()) {
       boolean dominant = true;
       Ad candidate = adIterator.next();
@@ -234,7 +240,7 @@ public class AdDaoImpl implements AdDao {
     }
     if (dominantAdList.size() > 0) {
       LOG.info("Size of dominated ads : " + String.valueOf(dominantAdList.size()));
-      dominantAd = dominantAdList.get(rn.nextInt(dominantAdList.size()));
+      dominantAd = getRandomAd(dominantAdList);
     }
     return dominantAd;
   }
@@ -244,33 +250,44 @@ public class AdDaoImpl implements AdDao {
     String sql = "select * from AD where fence @> ? and amountLeft > 0";
     Connection conn = getConnection();
     List<Ad> adList = new ArrayList<>();
-
-    try {
-      PreparedStatement pstmt = conn.prepareStatement(sql);
-      pstmt.setObject(1, model.getLocation());
-      ResultSet rs = pstmt.executeQuery();
-      while (rs.next()) {
-        adList.add(getAd(rs));
-      }
-      if (adList.size() > 0) {
-        // Random rn = new Random();
-        // Ad selectedAd = adList.get(rn.nextInt(adList.size()));
-        Ad selectedAd = skylinePick(adList);
-        return clickAd(selectedAd, IMPRESSION);
-      }
-    } catch (SQLException e) {
-      LOG.error("Error getting ad by name", e);
-    } finally {
-      if (conn == null) {
-        try {
-          conn.close();
-        } catch (SQLException e) {
-          LOG.error("Error closing connection", e);
+    Ad selectedAd = null;
+    if (model.getType().equals(NN)) {
+      selectedAd = nearestNeighbor(model);
+    } else {
+      try {
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setObject(1, model.getLocation());
+        ResultSet rs = pstmt.executeQuery();
+        while (rs.next()) {
+          adList.add(getAd(rs));
+        }
+        if (adList.size() > 0) {
+          // Random rn = new Random();
+          // Ad selectedAd = adList.get(rn.nextInt(adList.size()));
+          Ad randomAd = getRandomAd(adList);
+          if (model.getType().equals(RANDOM)) {
+            selectedAd = randomAd;
+          } else if (model.getType().equals(SKYLINE)) {
+            selectedAd = skylinePick(adList, randomAd);
+          }
+        }
+      } catch (SQLException e) {
+        LOG.error("Error getting ad by name", e);
+      } finally {
+        if (conn == null) {
+          try {
+            conn.close();
+          } catch (SQLException e) {
+            LOG.error("Error closing connection", e);
+          }
         }
       }
+      if (selectedAd == null) {
+        selectedAd = nearestNeighbor(model);
+      }
     }
+    return clickAd(selectedAd, IMPRESSION);
 
-    return new Ad();
   }
 
   @Override
@@ -300,6 +317,35 @@ public class AdDaoImpl implements AdDao {
       }
     }
     return adList;
+  }
+
+
+  private Ad nearestNeighbor(Location model) {
+    String
+        sql =
+        "select ? <-> @@ fence as dist , * from ad where amountleft > 0 order by dist asc , amountleft desc limit 1";
+    Connection conn = getConnection();
+    Ad nearestAd = new Ad();
+
+    try {
+      PreparedStatement pstmt = conn.prepareStatement(sql);
+      pstmt.setObject(1, model.getLocation());
+      ResultSet rs = pstmt.executeQuery();
+      if (rs.next()) {
+        nearestAd = getAd(rs);
+      }
+    } catch (SQLException e) {
+      LOG.error("Error getting ad by name", e);
+    } finally {
+      if (conn == null) {
+        try {
+          conn.close();
+        } catch (SQLException e) {
+          LOG.error("Error closing connection", e);
+        }
+      }
+    }
+    return nearestAd;
   }
 
 }

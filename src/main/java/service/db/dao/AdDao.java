@@ -24,5 +24,6 @@ public interface AdDao {
   public Ad getAdByLocation(Location model);
 
 
+
   public List<Ad> getAllAds();
 }

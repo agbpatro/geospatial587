@@ -12,8 +12,12 @@ import java.sql.SQLException;
 public class Location implements Serializable {
 
 
+  final public static String RANDOM = "random";
+  final public static String NN = "nn";
+  final public static String SKYLINE = "skyline";
   final static Logger LOG = Logger.getLogger(Location.class);
   PGpoint location;
+  String type;
 
   public PGpoint getLocation() {
     return location;
@@ -30,5 +34,16 @@ public class Location implements Serializable {
     } catch (SQLException e) {
       LOG.error("Error building location", e);
     }
+  }
+
+  public String getType() {
+    if (type == null) {
+      type = SKYLINE;
+    }
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
   }
 }
