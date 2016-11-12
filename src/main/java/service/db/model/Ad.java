@@ -47,6 +47,10 @@ public class Ad implements Serializable {
     return id;
   }
 
+  public void setId(String id) {
+    this.id = Integer.parseInt(id);
+  }
+
   public void setId(int id) {
     this.id = id;
   }
@@ -55,12 +59,20 @@ public class Ad implements Serializable {
     return impressions;
   }
 
+  public void setImpressions(String impressions) {
+    this.impressions = Integer.parseInt(impressions);
+  }
+
   public void setImpressions(int impressions) {
     this.impressions = impressions;
   }
 
   public float getBudget() {
     return budget;
+  }
+
+  public void setBudget(String budget) {
+    this.budget = Float.parseFloat(budget);
   }
 
   public void setBudget(float budget) {
@@ -91,6 +103,10 @@ public class Ad implements Serializable {
     this.amountLeft = amountLeft;
   }
 
+  public void setAmountLeft(String amountLeft) {
+    this.amountLeft = Float.parseFloat(amountLeft);
+  }
+
   public int getClickCount() {
     return clickCount;
   }
@@ -99,8 +115,16 @@ public class Ad implements Serializable {
     this.clickCount = clickCount;
   }
 
+  public void setClickCount(String clickCount) {
+    this.clickCount = Integer.parseInt(clickCount);
+  }
+
   public int getImageId() {
     return imageId;
+  }
+
+  public void setImageId(String imageId) {
+    this.imageId = Integer.parseInt(imageId);
   }
 
   public void setImageId(int imageId) {
@@ -109,6 +133,10 @@ public class Ad implements Serializable {
 
   public int getPersonId() {
     return personId;
+  }
+
+  public void setPersonId(String personId) {
+    this.personId = Integer.parseInt(personId);
   }
 
   public void setPersonId(int personId) {
@@ -161,6 +189,10 @@ public class Ad implements Serializable {
 
   public float getxAttribute() {
     return xAttribute;
+  }
+
+  public void setxAttribute(String xAttribute) {
+    this.xAttribute = Float.parseFloat(xAttribute);
   }
 
   public void setxAttribute(float xAttribute) {
