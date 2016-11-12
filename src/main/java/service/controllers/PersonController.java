@@ -73,6 +73,8 @@ public class PersonController {
     PersonDaoImpl ob = new PersonDaoImpl();
     List<Ad> op = ob.getAllPersonAds(person);
     LOG.info("Person Ads fetched");
-    return JSONAd(op);
+    String result = JSONAd(op);
+    LOG.info(result);
+    return result;
   }
 }
