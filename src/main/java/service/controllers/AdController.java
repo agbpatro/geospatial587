@@ -20,6 +20,7 @@ import static service.db.impl.AdDaoImpl.CLICK;
 import static service.db.impl.AdDaoImpl.IMPRESSION;
 import static service.response.JsonResponse.JSONAd;
 import static service.response.JsonResponse.JSONPersonAd;
+import static service.response.JsonResponse.JSONLocation;
 
 /**
  * Created by patro on 9/24/16.
@@ -71,6 +72,9 @@ public class AdController {
       method = RequestMethod.POST)
   @ResponseBody
   public String clickAd(@RequestBody Ad ad) {
+    String ip = JSONAd(ad);
+    LOG.info("Requested to click ad");
+    LOG.info(ip);
     AdDaoImpl ob = new AdDaoImpl();
     Ad op = ob.clickAd(ad, CLICK);
     LOG.info("Ad updated click count");
@@ -84,6 +88,9 @@ public class AdController {
       method = RequestMethod.POST)
   @ResponseBody
   public String impressionAd(@RequestBody Ad ad) {
+    String ip = JSONAd(ad);
+    LOG.info("Requested to impress ad");
+    LOG.info(ip);
     AdDaoImpl ob = new AdDaoImpl();
     Ad op = ob.clickAd(ad, IMPRESSION);
     LOG.info("Ad updated impression count");
@@ -97,6 +104,9 @@ public class AdController {
       method = RequestMethod.POST)
   @ResponseBody
   public String getAd(@RequestBody Location location) {
+    String ip = JSONLocation(location);
+    LOG.info("Requested to get ad location");
+    LOG.info(ip);
     AdDaoImpl ob = new AdDaoImpl();
     Ad op1 = ob.getAdByLocation(location);
     LOG.info("Ad fetched by location");
@@ -110,6 +120,9 @@ public class AdController {
       method = RequestMethod.POST)
   @ResponseBody
   public String deleteAd(@RequestBody PersonAd personAd) {
+    String ip = JSONPersonAd(personAd);
+    LOG.info("Requested to get delete ad");
+    LOG.info(ip);
     PersonAdDaoImpl ob1 = new PersonAdDaoImpl();
     PersonAd op = ob1.deleteAdPerson(personAd);
     LOG.info("Ad deleted");

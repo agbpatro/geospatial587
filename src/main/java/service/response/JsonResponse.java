@@ -11,6 +11,7 @@ import java.util.List;
 import service.db.model.Ad;
 import service.db.model.Person;
 import service.db.model.PersonAd;
+import service.db.model.Location;
 
 /**
  * Created by sridharyadav on 9/23/16.
@@ -144,6 +145,32 @@ public class JsonResponse {
       return responseArray.toString();
     } catch (JSONException e) {
       LOG.error("Error parsing person ad object", e);
+      return "";
+    }
+  }
+
+
+
+  public static String JSONLocation(Location location) {
+    ArrayList<Location> temp = new ArrayList<>();
+    temp.add(location);
+    return JSONLocation(temp);
+  }
+
+  public static String JSONLocation(List<Location> locations) {
+    JSONArray responseArray = new JSONArray();
+    try {
+      for (Location location : locations) {
+        if (location != null) {
+          JSONObject obj = new JSONObject();
+          obj.put("location", location.getLocation());
+          obj.put("type", location.getType());
+          responseArray.put(obj);
+        }
+      }
+      return responseArray.toString();
+    } catch (JSONException e) {
+      LOG.error("Error parsing location object", e);
       return "";
     }
   }

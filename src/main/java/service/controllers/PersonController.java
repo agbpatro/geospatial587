@@ -27,6 +27,9 @@ public class PersonController {
       method = RequestMethod.POST)
   @ResponseBody
   public String addPerson(@RequestBody Person person) {
+    String ip = JSONPerson(person);
+    LOG.info("Requested to add person");
+    LOG.info(ip);
     PersonDaoImpl ob = new PersonDaoImpl();
     Person op = ob.insertPerson(person);
     LOG.info("Person added");
@@ -53,6 +56,9 @@ public class PersonController {
       method = RequestMethod.POST)
   @ResponseBody
   public String getPerson(@RequestBody Person person) {
+    String ip = JSONPerson(person);
+    LOG.info("Requested to get person");
+    LOG.info(ip);
     PersonDaoImpl ob = new PersonDaoImpl();
     Person op;
     if (person.getName() != null) {
@@ -70,6 +76,9 @@ public class PersonController {
       method = RequestMethod.POST)
   @ResponseBody
   public String getAllpersonAds(@RequestBody Person person) {
+    String ip = JSONPerson(person);
+    LOG.info("Requested to get person ads");
+    LOG.info(ip);
     PersonDaoImpl ob = new PersonDaoImpl();
     List<Ad> op = ob.getAllPersonAds(person);
     LOG.info("Person Ads fetched");
