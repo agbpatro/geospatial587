@@ -36,6 +36,9 @@ public class AdController {
       method = RequestMethod.POST)
   @ResponseBody
   public String buildAd(@RequestBody Ad ad) {
+    String ip = JSONAd(ad);
+    LOG.info("Requested to insert");
+    LOG.info(ip);
     AdDaoImpl ob1 = new AdDaoImpl();
     PersonAdDaoImpl ob2 = new PersonAdDaoImpl();
     Ad op1 = ob1.insertAd(ad);
