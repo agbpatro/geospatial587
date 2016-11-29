@@ -286,8 +286,8 @@ public class AdDaoImpl implements AdDao {
         selectedAd = nearestNeighbor(model);
       }
     }
-    //return clickAd(selectedAd, IMPRESSION);
-    return selectedAd;
+    return clickAd(selectedAd, IMPRESSION);
+    //return selectedAd;
 
   }
 
