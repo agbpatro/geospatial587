@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import service.db.model.Ad;
+import service.db.model.Location;
 import service.db.model.Person;
 import service.db.model.PersonAd;
-import service.db.model.Location;
 
 /**
  * Created by sridharyadav on 9/23/16.
@@ -91,6 +91,7 @@ public class JsonResponse {
           } else {
             obj.put("ctr", 0);
           }
+          obj.put("centroid", ad.getCentroid());
           responseArray.put(obj);
         }
       }
@@ -149,7 +150,6 @@ public class JsonResponse {
       return "";
     }
   }
-
 
 
   public static String JSONLocation(Location location) {
