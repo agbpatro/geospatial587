@@ -117,8 +117,8 @@ public class PersonAdDaoImpl implements PersonAdDao {
         }
       }
     }
-    AdDaoImpl ob = new AdDaoImpl();
-    ob.deleteAd(source);
+    //AdDaoImpl ob = new AdDaoImpl();
+    //ob.deleteAd(source);
     return op;
 
   }
