@@ -251,7 +251,6 @@ public class AdDaoImpl implements AdDao {
     Connection conn = getConnection();
     List<Ad> adList = new ArrayList<>();
     Ad selectedAd = null;
-    /*
     if (model.getType().equals(RANDOM)) {
         selectedAd = getRandomAd(getAllAds());
     } else if (model.getType().equals(NN)) {
@@ -289,8 +288,6 @@ public class AdDaoImpl implements AdDao {
         selectedAd = nearestNeighbor(model);
       }
     }
-    */
-    selectedAd = getRandomAd(getAllAds());
     return clickAd(selectedAd, IMPRESSION);
     //return selectedAd;
 
