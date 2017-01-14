@@ -18,7 +18,8 @@ public class Application {
   final static private String password = "spatialad";
   final static private String
       connection =
-      "jdbc:postgresql://geospatialdb.cqeod3cq54hm.us-west-2.rds.amazonaws.com:5432/geospatialdb?user=spatialdb&password=spatialad";
+       "jdbc:postgresql://ec2-35-165-161-51.us-west-2.compute.amazonaws.com:5432/snowplow?user=power_user&password=$poweruserpassword";
+      // "jdbc:postgresql://geospatialdb.cqeod3cq54hm.us-west-2.rds.amazonaws.com:5432/geospatialdb?user=spatialdb&password=spatialad";
   public static Connection conn;
   //"jdbc:postgresql://shudhgvf:NPXQ1d2eVU32ouq7SfyGwcu9-C5m0Iug@elmer.db.elephantsql.com:5432/shudhgvf";
 

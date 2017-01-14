@@ -1,5 +1,5 @@
 # 1 Add user
-`curl -X POST -H "Content-Type: application/json"  -d '{     "name" : "Abhishek Patro",     "city" : "USA",     "age" : 25 }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/addperson"`
+`curl -X POST -H "Content-Type: application/json"  -d '{     "name" : "Abhishek Patro",     "city" : "USA",     "age" : 25 }' "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/person/addperson"`
  
 #Response
 ```json
@@ -16,7 +16,7 @@
 
 
 # 2 Build Ad
-`curl -X POST -H "Content-Type: application/json" -d '{    "name" : "Club Havana",    "country" : "USA",    "budget" : 10000,    "personId" : 2,    "type" : "video",    "videourl" : "https://www.youtube.com/watch?v=w7IWLZcVU64",    "clickurl" : "https://en.wikipedia.org/wiki/Casablanca_(film)",    "fence": "((0,0),(0,10),(10, 10),(0, 0))"}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/buildad"`
+`curl -X POST -H "Content-Type: application/json" -d '{    "name" : "Club Havana",    "country" : "USA",    "budget" : 10000,    "personId" : 2,    "type" : "video",    "videourl" : "https://www.youtube.com/watch?v=w7IWLZcVU64",    "clickurl" : "https://en.wikipedia.org/wiki/Casablanca_(film)",    "fence": "((0,0),(0,10),(10, 10),(0, 0))"}' "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/ad/buildad"`
 
 #Response
 ```json
@@ -41,7 +41,7 @@
 ```
 
 # 3 Get All Ads
-`curl -X GET -H "Content-Type: application/json" "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/getads"`
+`curl -X GET -H "Content-Type: application/json" "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/ad/getads"`
 
 #Response
 ```json
@@ -127,7 +127,7 @@
 
 
 # 4 Increase Click Count
-`curl -X POST -H "Content-Type: application/json"  -d '{    "id" : 5    }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/clickad"`
+`curl -X POST -H "Content-Type: application/json"  -d '{    "id" : 5    }' "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/ad/clickad"`
 
 #Response
 ```json
@@ -154,7 +154,7 @@
 
 
 # 5 Increase Impression Count
-`curl -X POST -H "Content-Type: application/json"  -d '{    "id" : 5    }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/impressionad"`
+`curl -X POST -H "Content-Type: application/json"  -d '{    "id" : 5    }' "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/ad/impressionad"`
 
 #Response
 ```json
@@ -179,9 +179,9 @@
 ```
 
 # 6 Get single Ad based on location (based on budget,fence,etc parameters)
-`curl -X POST -H "Content-Type: application/json" -d '{    "location" : "(2, 8),"type" : "random"}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/getad"`
-`curl -X POST -H "Content-Type: application/json" -d '{    "location" : "(2, 8),"type" : "nn"}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/getad"`
-`curl -X POST -H "Content-Type: application/json" -d '{    "location" : "(2, 8),"type" : "skyline"}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/getad"`
+`curl -X POST -H "Content-Type: application/json" -d '{    "location" : "(2, 8),"type" : "random"}' "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/ad/getad"`
+`curl -X POST -H "Content-Type: application/json" -d '{    "location" : "(2, 8),"type" : "nn"}' "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/ad/getad"`
+`curl -X POST -H "Content-Type: application/json" -d '{    "location" : "(2, 8),"type" : "skyline"}' "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/ad/getad"`
 
 #Response
 ```json
@@ -208,7 +208,7 @@
 
 
 # 7 Get Ads for a particular users
-`curl -X POST -H "Content-Type: application/json" -d '{ "name" : "Abhishek Patro" }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/getpersonads"`
+`curl -X POST -H "Content-Type: application/json" -d '{ "name" : "Abhishek Patro" }' "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/person/getpersonads"`
 #Response
 ```json
 [
@@ -297,7 +297,7 @@
 
 
 # 8 Get all persons
-`curl -X GET -H "Content-Type: application/json" "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/getpersons"`
+`curl -X GET -H "Content-Type: application/json" "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/person/getpersons"`
 
 
 #Response
@@ -345,9 +345,9 @@
 
 # 9 Get person by name/id
 
-`curl -X POST -H "Content-Type: application/json"  -d '{   "name" : "Abhishek Patro" }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/getperson"`
+`curl -X POST -H "Content-Type: application/json"  -d '{   "name" : "Abhishek Patro" }' "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/person/getperson"`
 
-`curl -X POST -H "Content-Type: application/json"  -d '{   "id" : 2 }' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/person/getperson"`
+`curl -X POST -H "Content-Type: application/json"  -d '{   "id" : 2 }' "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/person/getperson"`
 #Response
 ```json
 [
@@ -361,7 +361,7 @@
 ```
 
 # 10 Delete an ad by user
-`curl -X POST -H "Content-Type: application/json" -d '{    "personId" : 2,    "adId" : 9}' "ec2-35-160-50-16.us-west-2.compute.amazonaws.com:8080/v1/ad/deletead"`
+`curl -X POST -H "Content-Type: application/json" -d '{    "personId" : 2,    "adId" : 9}' "ec2-35-165-161-51.us-west-2.compute.amazonaws.com:8080/v1/ad/deletead"`
 #Response
 ```json
 [
