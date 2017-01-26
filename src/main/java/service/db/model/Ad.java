@@ -224,7 +224,7 @@ public class Ad implements Serializable {
 
 
       } catch (Exception e) {
-        LOG.error("Error getting centroid");
+        LOG.error("Error getting centroid", e);
       }
     }
     return p;
