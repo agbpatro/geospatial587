@@ -205,6 +205,7 @@ public class Ad implements Serializable {
     PGpoint p = new PGpoint(0, 0);
     if (fence != null) {
       try {
+        LOG.error("fence is ",fence);
         String ip = fence.toString();
         int len = fence.points.length - 1;
         if (len <= 0) {
