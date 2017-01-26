@@ -91,7 +91,12 @@ public class JsonResponse {
           } else {
             obj.put("ctr", 0);
           }
+          obj.put("centroid", "");
+          try {
           obj.put("centroid", ad.getCentroid());
+          } catch (Exception e) {
+            LOG.error("Error getting centroid", e);
+          }
           responseArray.put(obj);
         }
       }
